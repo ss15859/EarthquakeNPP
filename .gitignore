@@ -3,6 +3,7 @@ Datasets/**/raw/
 
 # Ignore ipynb checkpoints
 Datasets/.ipynb_checkpoints/
+Datasets/**/.ipynb_checkpoints/
 
 # Ignore _pycache_
 Datasets/__pycache__
