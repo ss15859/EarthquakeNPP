@@ -184,6 +184,7 @@ dependencies:
       - cligj==0.7.2
       - contourpy==1.1.1
       - cycler==0.12.1
+      - Cython==3.0.10
       - docstring-parser==0.16
       - dotwiz==0.4.0
       - etas @ git+https://github.com/lmizrahi/etas@5124984f7883c02ae2a0eb99cd39a6aea772c841
