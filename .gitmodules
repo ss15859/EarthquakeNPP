@@ -1,0 +1,6 @@
+[submodule "Experiments/AutoSTPP"]
+	path = Experiments/AutoSTPP
+	url = https://github.com/ss15859/AutoSTPP.git
+[submodule "Experiments/neural_stpp"]
+	path = Experiments/neural_stpp
+	url = https://github.com/ss15859/neural_stpp.git
