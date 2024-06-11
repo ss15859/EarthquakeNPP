@@ -1,4 +1,4 @@
-name: autoint-stpp
+name: earthquakeNPP
 channels:
   - pytorch
   - nvidia
