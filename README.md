@@ -83,7 +83,7 @@ This first iteration of EarthquakeNPP focuses on California. However, another da
 
 ### [ETAS](https://github.com/ss15859/EarthquakeNPP/tree/main/Experiments/ETAS)
 
-EarthquakeNPP facilitates the benchmarking of NPP models against the ETAS model, a spatio-temporal Hawkes process used for operational earthquake forecasting by government agencies in California, New-Zealand, Italy, Japan and Switzerland. It is implemented in the [`etas`](https://github.com/lmizrahi/etas) python package.
+EarthquakeNPP facilitates the benchmarking of NPP models against the ETAS model, a spatio-temporal Hawkes process used for operational earthquake forecasting by government agencies in [California](https://pubs.geoscienceworld.org/ssa/srl/article-abstract/91/3/1567/582898/Operational-Earthquake-Forecasting-during-the-2019?redirectedFrom=fulltext), [New-Zealand](https://db.nzsee.org.nz/2017/O3C.4_Christophersen.pdf), [Italy](https://www.earth-prints.org/bitstream/2122/16524/1/Operational%20Earthquake%20Forecasting%20in%20Italy%20validation%20after%2010%20yr%20of%20operativity.pdf), [Japan](https://www.researchgate.net/publication/328643801_Implementation_of_a_Real-Time_System_for_Automatic_Aftershock_Forecasting_in_Japan) and [Switzerland](https://pubs.geoscienceworld.org/ssa/bssa/article/doi/10.1785/0120240007/644286/suiETAS-Developing-and-Testing-ETAS-Based). It is implemented in the [`etas`](https://github.com/lmizrahi/etas) python package.
 
 For all experiments run,
   ```bash
