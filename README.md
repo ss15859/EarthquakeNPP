@@ -95,7 +95,7 @@ To train and test the model,
 - **License:** MIT License, Copyright (c) 2024 ETH Zurich, Leila Mizrahi
 - **Credit:** etas (doi: 10.5281/zenodo.6583992)
 
-### [NSTPP](https://github.com/ss15859/EarthquakeNPP/tree/main/Experiments/neural_stpp)
+### [NSTPP](https://github.com/ss15859/neural_stpp/tree/c80bca36698846443d01e04c455d956e2cb0cff9)
 
 A NPP that parameterizes the spatial probability density function with continuous-time normalizing flows (CNFs). For the benchmarking experiment we use their Attentive CNF model for its computational efficiency and overall performance versus their other model Jump CNF ([Chen et al., 2020](https://arxiv.org/pdf/2011.04583)).
 
@@ -108,7 +108,7 @@ To train and test the model,
 - **License:** CC BY-NC 4.0 License.
 - **Credit:** Chen, R. T., Amos, B., & Nickel, M. (2020). Neural spatio-temporal point processes. arXiv preprint arXiv:2011.04583.
 
-### [Deep-STPP](https://github.com/ss15859/EarthquakeNPP/tree/main/Experiments/AutoSTPP)
+### [Deep-STPP](https://github.com/ss15859/AutoSTPP/tree/25aec04f9f9ce38c852a310970a7181e09701462)
 
 A NPP that constructs a non parametric space-time intensity function governed by a deep latent process ([Zhou et al., 2022](https://arxiv.org/pdf/2112.06351)).
 
@@ -121,7 +121,7 @@ To train and test the model,
 - **License:** The MIT License (MIT), Copyright (c) 2022, Zihao Zhou
 - **Credit:** Zhou, Z., Yang, X., Rossi, R., Zhao, H., & Yu, R. (2022, May). Neural point process for learning spatiotemporal event dynamics. In Learning for Dynamics and Control Conference (pp. 777-789). PMLR.
 
-### [AutoSTPP](https://github.com/ss15859/EarthquakeNPP/tree/main/Experiments/AutoSTPP)
+### [AutoSTPP](https://github.com/ss15859/AutoSTPP/tree/25aec04f9f9ce38c852a310970a7181e09701462)
 
 A NPP which jointly models the 3D space-time integral of the intensity along with its derivative (the intensity function) using a dual network approach ([Zhou et al., 2024](https://openreview.net/pdf?id=Deb1yP1zMN)).
 
