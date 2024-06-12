@@ -8,21 +8,21 @@ EarthquakeNPP is an expanding collection of benchmark datasets designed to facil
 ## Setup
 
 1. Clone the repository and its submodules:
-   ```bash
-   git clone --recurse-submodules https://github.com/ss15859/EarthquakeNPP.git
-   ````
+  ```bash
+  git clone --recurse-submodules https://github.com/ss15859/EarthquakeNPP.git
+  ```
 2. Navigate to the cloned directory:
-   ```bash
-cd EarthquakeNPP
-    ```
+  ```bash
+  cd EarthquakeNPP
+  ```
 3. Create the conda environment:
-    ```bash
-    conda env create -f environment.yml
-    ```
+  ```bash
+  conda env create -f environment.yml
+  ```
 4. Activate the conda environment:
-    ```bash
-    conda activate earthquakeNPP
-    ```
+  ```bash
+  conda activate earthquakeNPP
+  ```
 
 ## Datasets
 
