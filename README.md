@@ -1,6 +1,6 @@
 # EarthquakeNPP: Benchmark Datasets for Earthquake Forecasting with Neural Point Processes
 
-EarthquakeNPP is an expanding collection of benchmark datasets designed to facilitate testing of Neural Point Processes (NPP) on earthquake data. The datasets are accompanied by an implementation of the Epidemic-Type Aftershock Sequence (ETAS) model, currently considered the benchmark forecasting model in the seismology community. Derived from publicly available raw data, these datasets undergo processing and configuration to support forecasting experiments relevant to stakeholders in seismology. The datasets cover various regions of California, representing typical forecasting zones and the data commonly available to forecast issuers. Several datasets include much smaller magnitude earthquakes thanks to modern algorithms for detection and dense seismic networks.
+EarthquakeNPP is an expanding collection of benchmark datasets designed to facilitate testing of Neural Point Processes (NPPs) on earthquake data. The datasets are accompanied by an implementation of the Epidemic-Type Aftershock Sequence (ETAS) model, currently considered the benchmark forecasting model in the seismology community. Derived from publicly available raw data, these datasets undergo processing and configuration to support forecasting experiments relevant to stakeholders in seismology. The datasets cover various regions of California, representing typical forecasting zones and the data commonly available to forecast issuers. Several datasets include much smaller magnitude earthquakes thanks to modern algorithms for detection and dense seismic networks.
 
 ![EarthquakeNPP](img/EarthquakeNPP.png)
 
@@ -26,7 +26,7 @@ EarthquakeNPP is an expanding collection of benchmark datasets designed to facil
 
 ## Datasets
 
-All the datasets in EarthquakeNPP are derived from publicly available raw earthquake catalogs. The `Datasets/` directory contains notebooks to process and configure each dataset for earthquake forecasting experiments, to benchmark NPP models against the ETAS model. These notebooks outline how to download, analyze, and finally truncate the raw data (in space, time, and magnitude) for the benchmarking experiments. The pre-processed data can also be found in `Datasets/`, allowing users to proceed directly to the benchmarking experiments if desired.
+All the datasets in EarthquakeNPP are derived from publicly available raw earthquake catalogs. The `Datasets/` directory contains notebooks to process and configure each dataset for the earthquake forecasting experiments. These notebooks outline how to download, analyze, and finally truncate the raw data (in space, time, and magnitude) for the benchmarking experiments. The pre-processed data can also be found in `Datasets/`, allowing users to proceed directly to the benchmarking experiments if desired.
 
 ### [ComCat](https://github.com/ss15859/EarthquakeNPP/tree/main/Datasets/ComCat)
 
@@ -58,10 +58,11 @@ EarthquakeNPP contains two datasets derived from this raw catalog, focusing on t
 White et al. [(2019)](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019JB017641) created an enhanced catalog focusing on the San Jacinto fault region, using a dense seismic network in Southern California. The processed EarthquakeNPP dataset (`WHITE_06`) contains earthquakes down to Mw 0.6 within a constrained region of the raw catalog.
 
 - **License:** This dataset is licensed under a Creative Commons Attribution 4.0 International license.
+- **Credit:** White, M. C. A., Ben‐Zion, Y., & Vernon, F. L. (2019). A Detailed Earthquake Catalog for the San Jacinto Fault‐Zone Region in Southern California. Journal of Geophysical Research: Solid Earth, 124(7), 6908–6930. (doi: 10.1029/2019JB017641)
 
 ### [ETAS](https://github.com/ss15859/EarthquakeNPP/tree/main/Datasets/ETAS)
 
-EarthquakeNPP contains a synthetic earthquake catalog of California generated using the `etas` Python package. The parameters used to simulate the dataset are derived by fitting an ETAS model to the `ComCat_25` dataset. Events from the simulated dataset (`ETAS_25`) are removed to create a second dataset (`ETAS_incomplete_25`), emulating the missing data that typically follows large earthquakes.
+EarthquakeNPP contains a synthetic earthquake catalog of California generated using the [`etas`](https://github.com/lmizrahi/etas) python package. The parameters used to simulate the dataset are derived by fitting an ETAS model to the `ComCat_25` dataset. Events from the simulated dataset (`ETAS_25`) are removed to create a second dataset (`ETAS_incomplete_25`), emulating the missing data that typically follows large earthquakes.
 
 - **License:** MIT License, Copyright (c) 2024 ETH Zurich, Leila Mizrahi
 - **Credit:** etas (doi: 10.5281/zenodo.6583992)
@@ -80,15 +81,55 @@ This first iteration of EarthquakeNPP focuses on California. However, another da
 
 ## Experiments
 
+### [ETAS](https://github.com/ss15859/EarthquakeNPP/tree/main/Experiments/ETAS)
 
+EarthquakeNPP facilitates the benchmarking of NPP models against the ETAS model, a spatio-temporal Hawkes process used for operational earthquake forecasting by government agencies in California, New-Zealand, Italy, Japan and Switzerland. It is implemented in the [`etas`](https://github.com/lmizrahi/etas) python package.
 
-### Licenses
+To train and test the model,
+  ```bash
+  cd Experiments/ETAS/
+  python invert_etas.py ComCat_25
+  python predict_etas.py ComCat_25
+  ```
 
-This project uses code from the following repositories, each under their respective licenses:
+- **License:** MIT License, Copyright (c) 2024 ETH Zurich, Leila Mizrahi
+- **Credit:** etas (doi: 10.5281/zenodo.6583992)
 
-1. AutoSTPP: MIT License
-2. etas: MIT License
-3. neural_stpp: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+### [NSTPP](https://github.com/ss15859/EarthquakeNPP/tree/main/Experiments/neural_stpp)
 
-For more details on the licenses, please refer to the LICENSE files in the respective repositories.
+A NPP that parameterizes the spatial probability density function with continuous-time normalizing flows (CNFs). For the benchmarking experiment we use their Attentive CNF model for its computational efficiency and overall performance versus their other model Jump CNF ([Chen et al., 2020](https://arxiv.org/pdf/2011.04583)).
 
+To train and test the model,
+  ```bash
+  cd Experiments/neural_stpp/
+  python train_stpp.py --data ComCat_25 --model attncnf --tpp neural --l2_attn --seed 0
+  ```
+
+- **License:** CC BY-NC 4.0 License.
+- **Credit:** Chen, R. T., Amos, B., & Nickel, M. (2020). Neural spatio-temporal point processes. arXiv preprint arXiv:2011.04583.
+
+### [Deep-STPP](https://github.com/ss15859/EarthquakeNPP/tree/main/Experiments/AutoSTPP)
+
+A NPP that constructs a non parametric space-time intensity function governed by a deep latent process ([Zhou et al., 2022](https://arxiv.org/pdf/2112.06351)).
+
+To train and test the model,
+  ```bash
+  cd Experiments/AutoSTPP/
+  make run_stpp_earthquakeNPP config=ComCat_25_deep_stpp_seed_1553
+  ```
+
+- **License:** The MIT License (MIT), Copyright (c) 2022, Zihao Zhou
+- **Credit:** Zhou, Z., Yang, X., Rossi, R., Zhao, H., & Yu, R. (2022, May). Neural point process for learning spatiotemporal event dynamics. In Learning for Dynamics and Control Conference (pp. 777-789). PMLR.
+
+### [AutoSTPP](https://github.com/ss15859/EarthquakeNPP/tree/main/Experiments/AutoSTPP)
+
+A NPP which jointly models the 3D space-time integral of the intensity along with its derivative (the intensity function) using a dual network approach ([Zhou et al., 2024](https://openreview.net/pdf?id=Deb1yP1zMN)).
+
+To train and test the model,
+  ```bash
+  cd Experiments/AutoSTPP/
+  make run_stpp_earthquakeNPP config=ComCat_25_autoint_stpp_seed_1553
+  ```
+
+- **License:** The MIT License (MIT), Copyright (c) 2022, Zihao Zhou
+- **Credit:** Zhou, Z., & Yu, R. (2024). Automatic Integration for Spatiotemporal Neural Point Processes. Advances in Neural Information Processing Systems, 36.
