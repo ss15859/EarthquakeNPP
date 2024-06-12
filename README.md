@@ -79,19 +79,19 @@ This first iteration of EarthquakeNPP focuses on California. However, another da
 
 
 
-## Experiments
+## [Experiments](https://github.com/ss15859/EarthquakeNPP/tree/main/Experiments)
 
 ### [ETAS](https://github.com/ss15859/EarthquakeNPP/tree/main/Experiments/ETAS)
 
 EarthquakeNPP facilitates the benchmarking of NPP models against the ETAS model, a spatio-temporal Hawkes process used for operational earthquake forecasting by government agencies in California, New-Zealand, Italy, Japan and Switzerland. It is implemented in the [`etas`](https://github.com/lmizrahi/etas) python package.
 
-To train and test the model,
+For all experiments run,
   ```bash
   cd Experiments/ETAS/
-  python invert_etas.py ComCat_25
-  python predict_etas.py ComCat_25
+  python invert_etas.py [dataset]
+  python predict_etas.py [dataset]
   ```
-
+Where `[dataset]` is one of `ComCat_25|synthetic_California_25|incomplete_California_25|SaltonSea_10|SanJac_10|SCEDC_20|SCEDC_25|SCEDC_30|WHITE_06|Japan_25`.
 - **License:** MIT License, Copyright (c) 2024 ETH Zurich, Leila Mizrahi
 - **Credit:** etas (doi: 10.5281/zenodo.6583992)
 
@@ -99,11 +99,13 @@ To train and test the model,
 
 A NPP that parameterizes the spatial probability density function with continuous-time normalizing flows (CNFs). For the benchmarking experiment we use their Attentive CNF model for its computational efficiency and overall performance versus their other model Jump CNF ([Chen et al., 2020](https://arxiv.org/pdf/2011.04583)).
 
-To train and test the model,
+For all experiments run,
+
   ```bash
   cd Experiments/neural_stpp/
-  python train_stpp.py --data ComCat_25 --model attncnf --tpp neural --l2_attn --seed 0
+  python train_stpp.py --data [dataset] --model attncnf --tpp neural --l2_attn --seed [seed]
   ```
+Where `[dataset]` is one of `ComCat_25|ETAS_25|ETAS_incomplete_25|SaltonSea_10|SanJac_10|SCEDC_20|SCEDC_25|SCEDC_30|WHITE_06|Japan_25`, and `[seed]` is one of `0|1|2`
 
 - **License:** CC BY-NC 4.0 License.
 - **Credit:** Chen, R. T., Amos, B., & Nickel, M. (2020). Neural spatio-temporal point processes. arXiv preprint arXiv:2011.04583.
@@ -112,11 +114,12 @@ To train and test the model,
 
 A NPP that constructs a non parametric space-time intensity function governed by a deep latent process ([Zhou et al., 2022](https://arxiv.org/pdf/2112.06351)).
 
-To train and test the model,
+For all experiments run,
   ```bash
   cd Experiments/AutoSTPP/
-  make run_stpp_earthquakeNPP config=ComCat_25_deep_stpp_seed_1553
+  make run_stpp_earthquakeNPP config=[dataset]_deep_stpp_seed_[seed]
   ```
+Where `[dataset]` is one of `ComCat_25|ETAS_25|ETAS_incomplete_25|SaltonSea_10|SanJac_10|SCEDC_20|SCEDC_25|SCEDC_30|WHITE_06|Japan_25`, and `[seed]` is one of `1553|1554|1555`
 
 - **License:** The MIT License (MIT), Copyright (c) 2022, Zihao Zhou
 - **Credit:** Zhou, Z., Yang, X., Rossi, R., Zhao, H., & Yu, R. (2022, May). Neural point process for learning spatiotemporal event dynamics. In Learning for Dynamics and Control Conference (pp. 777-789). PMLR.
@@ -125,11 +128,12 @@ To train and test the model,
 
 A NPP which jointly models the 3D space-time integral of the intensity along with its derivative (the intensity function) using a dual network approach ([Zhou et al., 2024](https://openreview.net/pdf?id=Deb1yP1zMN)).
 
-To train and test the model,
+For all experiments run,
   ```bash
   cd Experiments/AutoSTPP/
-  make run_stpp_earthquakeNPP config=ComCat_25_autoint_stpp_seed_1553
+  make run_stpp_earthquakeNPP config=[dataset]_autoint_stpp_seed_[seed]
   ```
+Where `[dataset]` is one of `ComCat_25|ETAS_25|ETAS_incomplete_25|SaltonSea_10|SanJac_10|SCEDC_20|SCEDC_25|SCEDC_30|WHITE_06|Japan_25`, and `[seed]` is one of `1553|1554|1555`
 
 - **License:** The MIT License (MIT), Copyright (c) 2022, Zihao Zhou
 - **Credit:** Zhou, Z., & Yu, R. (2024). Automatic Integration for Spatiotemporal Neural Point Processes. Advances in Neural Information Processing Systems, 36.
