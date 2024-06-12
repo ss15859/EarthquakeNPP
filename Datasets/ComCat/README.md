@@ -103,79 +103,9 @@ raw_catalog.reset_index(drop=False, inplace=True)
 raw_catalog.rename(columns={'mag': 'magnitude','index': 'id'}, inplace=True)
 raw_catalog = raw_catalog[["time", "longitude", "latitude","magnitude"]].dropna()
 print('the raw catalog has', len(raw_catalog),'events')
-raw_catalog.head()
 ```
 
     the raw catalog has 301293 events
-
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>time</th>
-      <th>longitude</th>
-      <th>latitude</th>
-      <th>magnitude</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1940-01-01 12:49:28.010</td>
-      <td>-115.986500</td>
-      <td>32.578333</td>
-      <td>3.46</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1940-01-01 18:42:24.630</td>
-      <td>-115.389167</td>
-      <td>33.158500</td>
-      <td>3.58</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1940-01-04 07:15:33.010</td>
-      <td>-117.224000</td>
-      <td>34.012500</td>
-      <td>2.65</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1940-01-04 08:07:10.570</td>
-      <td>-116.187833</td>
-      <td>33.223000</td>
-      <td>4.01</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1940-01-05 06:20:50.460</td>
-      <td>-119.442000</td>
-      <td>32.929333</td>
-      <td>3.97</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
 
 
 ## Visualising the Catalog

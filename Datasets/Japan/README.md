@@ -72,86 +72,10 @@ raw_catalog.rename(columns={'mag': 'magnitude'}, inplace=True)
 raw_catalog = raw_catalog[["time", "longitude", "latitude","magnitude"]].dropna()
 raw_catalog.reset_index(drop=False, inplace=True)
 raw_catalog.rename(columns={'index': 'id'}, inplace=True)
-print(len(raw_catalog))
-raw_catalog.head()
+print('the raw catalog has', len(raw_catalog),'events')
 ```
 
-    37581
-
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>time</th>
-      <th>longitude</th>
-      <th>latitude</th>
-      <th>magnitude</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>1990-01-01 09:03:12.880</td>
-      <td>140.568</td>
-      <td>36.417</td>
-      <td>4.8</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>1990-01-02 16:26:37.730</td>
-      <td>146.063</td>
-      <td>43.420</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>1990-01-03 08:53:38.930</td>
-      <td>141.272</td>
-      <td>35.457</td>
-      <td>4.3</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>1990-01-04 12:16:38.380</td>
-      <td>141.408</td>
-      <td>36.342</td>
-      <td>4.4</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>1990-01-04 23:25:57.190</td>
-      <td>138.821</td>
-      <td>32.381</td>
-      <td>5.2</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+    the raw catalog has 37581 events
 
 
 

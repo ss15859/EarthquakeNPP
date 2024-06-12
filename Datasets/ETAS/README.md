@@ -73,97 +73,10 @@ catalog = pd.read_csv(
             )
 
 catalog = catalog.sort_values(by='time')
-catalog.head()
+print('the catalog has', len(catalog),'events')
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>latitude</th>
-      <th>longitude</th>
-      <th>time</th>
-      <th>magnitude</th>
-      <th>x</th>
-      <th>y</th>
-    </tr>
-    <tr>
-      <th>id</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>22028</th>
-      <td>42.484284</td>
-      <td>-118.810157</td>
-      <td>1971-01-01 04:13:56.578288436</td>
-      <td>2.5</td>
-      <td>609.747831</td>
-      <td>51.909082</td>
-    </tr>
-    <tr>
-      <th>80505</th>
-      <td>33.314329</td>
-      <td>-119.357659</td>
-      <td>1971-01-01 23:38:01.984298359</td>
-      <td>2.5</td>
-      <td>-410.080902</td>
-      <td>7.862907</td>
-    </tr>
-    <tr>
-      <th>29956</th>
-      <td>35.672898</td>
-      <td>-119.007235</td>
-      <td>1971-01-02 10:44:43.103773479</td>
-      <td>2.9</td>
-      <td>-147.734591</td>
-      <td>39.295596</td>
-    </tr>
-    <tr>
-      <th>51414</th>
-      <td>41.562394</td>
-      <td>-124.739464</td>
-      <td>1971-01-02 17:14:24.495743244</td>
-      <td>2.5</td>
-      <td>519.767657</td>
-      <td>-440.942778</td>
-    </tr>
-    <tr>
-      <th>51962</th>
-      <td>42.493774</td>
-      <td>-118.891605</td>
-      <td>1971-01-03 00:38:01.411354356</td>
-      <td>2.6</td>
-      <td>610.759650</td>
-      <td>45.213501</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+    the catalog has 90862 events
 
 
 We can see that the simulator groups the magnitudes into Mw 0.1 bins.

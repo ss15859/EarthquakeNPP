@@ -1,6 +1,6 @@
 # Detailed Earthquake Catalog for the San Jacinto Fault-Zone Region (WHITE) [1]
 
-[1] created an enhanced catalog focusing on the San Jacinto fault region, using an dense seismic network in Southern California. This denser network, combined with automated phase picking (STA/LTA), ensures a 99\% detection rate for earthquakes greater than Mw 0.6 in a specific subregion [1].
+\cite{white2019detailed} created an enhanced catalog focusing on the San Jacinto fault region, using an dense seismic network in Southern California. This denser network, combined with automated phase picking (STA/LTA), ensures a 99\% detection rate for earthquakes greater than Mw 0.6 in a specific subregion [1].
 
 ## Downloading the dataset
 
@@ -61,86 +61,10 @@ raw_catalog = raw_catalog.sort_values(by='time')
 raw_catalog = raw_catalog[["time", "longitude", "latitude","magnitude"]].dropna()
 raw_catalog.reset_index(drop=False, inplace=True)
 raw_catalog.rename(columns={'index': 'id'}, inplace=True)
-print(len(raw_catalog))
-raw_catalog.head()
+print('the raw catalog has', len(raw_catalog),'events')
 ```
 
-    251725
-
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>time</th>
-      <th>longitude</th>
-      <th>latitude</th>
-      <th>magnitude</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>2008-01-01 00:07:32.270</td>
-      <td>-116.640540</td>
-      <td>33.593590</td>
-      <td>0.22</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>2008-01-01 02:37:08.798</td>
-      <td>-116.729111</td>
-      <td>33.586163</td>
-      <td>0.57</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>2008-01-01 03:12:13.911</td>
-      <td>-116.526950</td>
-      <td>33.493550</td>
-      <td>0.34</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>2008-01-01 04:19:05.720</td>
-      <td>-116.355667</td>
-      <td>33.345688</td>
-      <td>0.72</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>2008-01-01 05:14:50.490</td>
-      <td>-116.663270</td>
-      <td>33.610800</td>
-      <td>-0.01</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+    the raw catalog has 251725 events
 
 
 ## Visualising the Catalog
@@ -188,9 +112,9 @@ plt.show()
 ```
 
 
-​    
+    
 ![png](README_files/README_10_0.png)
-​    
+    
 
 
 Let's now visualise the coordinates of the events in the catalog
@@ -246,9 +170,9 @@ plt.show()
 ```
 
 
-​    
+    
 ![png](README_files/README_12_0.png)
-​    
+    
 
 
 ## Truncating the Catalog
@@ -316,9 +240,9 @@ plt.show()
 ```
 
 
-​    
+    
 ![png](README_files/README_18_0.png)
-​    
+    
 
 
 Let's truncate the catalog above this threshold
@@ -435,9 +359,9 @@ plt.show()
 ```
 
 
-​    
+    
 ![png](README_files/README_23_0.png)
-​    
+    
 
 
 Finally, since ETAS uses the great-circle distance between two points on a sphere (km), for the NPPs we need to project the coordinates of the events into a space such that inter-event distances are in km. To do this, we can use the Azimuthal equidistant projection [5], which preserves distances from all points to a center point.

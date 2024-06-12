@@ -55,86 +55,10 @@ raw_catalog['time'] = pd.to_datetime(raw_catalog['time'])
 raw_catalog = raw_catalog.sort_values(by='time')
 raw_catalog = raw_catalog[["time", "longitude", "latitude","magnitude"]].dropna()
 raw_catalog.reset_index(drop=False, inplace=True)
-print(len(raw_catalog))
-raw_catalog.head()
+print('the raw catalog has', len(raw_catalog),'events')
 ```
 
-    898597
-
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>index</th>
-      <th>time</th>
-      <th>longitude</th>
-      <th>latitude</th>
-      <th>magnitude</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>2008-01-01 00:04:12.531</td>
-      <td>-116.28997</td>
-      <td>33.26719</td>
-      <td>0.78</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>2008-01-01 00:04:18.539</td>
-      <td>-116.58639</td>
-      <td>33.45944</td>
-      <td>0.37</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>2008-01-01 00:07:32.377</td>
-      <td>-116.63390</td>
-      <td>33.59068</td>
-      <td>0.38</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>2008-01-01 00:58:57.842</td>
-      <td>-116.49165</td>
-      <td>33.49528</td>
-      <td>0.05</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>2008-01-01 01:59:49.150</td>
-      <td>-115.59904</td>
-      <td>33.17647</td>
-      <td>-0.53</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+    the raw catalog has 898597 events
 
 
 ## Visualising the Catalog
