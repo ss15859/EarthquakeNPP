@@ -13,7 +13,7 @@ EarthquakeNPP is an expanding collection of benchmark datasets designed to facil
    ````
 2. Navigate to the cloned directory:
    ```bash
-    cd EarthquakeNPP
+cd EarthquakeNPP
     ```
 3. Create the conda environment:
     ```bash
