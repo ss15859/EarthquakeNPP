@@ -102,6 +102,8 @@ raw_catalog = raw_catalog.sort_values(by='time')
 raw_catalog.reset_index(drop=False, inplace=True)
 raw_catalog.rename(columns={'mag': 'magnitude','index': 'id'}, inplace=True)
 raw_catalog = raw_catalog[["time", "longitude", "latitude","magnitude"]].dropna()
+raw_catalog.reset_index(drop=False, inplace=True)
+raw_catalog.rename(columns={'index': 'id'}, inplace=True)
 print('the raw catalog has', len(raw_catalog),'events')
 ```
 
