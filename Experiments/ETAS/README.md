@@ -144,19 +144,19 @@ plt.show()
 
 Aim: The spatial test again aims to isolate the spatial component of the forecast and test the consistency of spatial rates with observed events.
 
-Method We perform the spatial test using the expected earthquake rates $\hat{\lambda}_s$ (calculated and plotted above). The observed spatial test statistic is calculated as
+Method We perform the spatial test using the expected earthquake rates $\lambda_s$ (calculated and plotted above). The observed spatial test statistic is calculated as
 
-$$ S_{obs} = \Bigg[\sum_{i=1}^{N_{obs}}\log \hat{\lambda}_s(k_i) \Bigg]N_{obs}^{-1} $$
+$$ S_{obs} = \Bigg[\sum_{i=1}^{N_{obs}}\log \lambda_s(k_i) \Bigg]N_{obs}^{-1} $$
 
-where $\hat{\lambda}_s(k_i)$ is the normalised approximate rate density in the $k^{th}$ cell corresponding to the $i^{th}$ event in the observed catalog.
+where $\lambda_s(k_i)$ is the normalised approximate rate density in the $k^{th}$ cell corresponding to the $i^{th}$ event in the observed catalog.
 
 Similarly, we define the test distribution using
 
-$$ S_c = \Bigg[\sum_{i=1}^{N_{j}}\log \hat{\lambda}_s(k_{ij}) \Bigg]N_{j}^{-1}; \ \ j=1,\dots,J $$ 
+$$ S_c = \Bigg[\sum_{i=1}^{N_{j}}\log \lambda_s(k_{ij}) \Bigg]N_{j}^{-1}; \ \ j=1,\dots,J $$ 
 
 Finally, the quantile score for the spatial test is determined by once again comparing the observed and test distribution statistics:
 
-$$ \gamma_s = F_s(\hat{S}_{obs}) = \mathbb{P}(\hat{S}_j \leq \hat{S}_{obs}) $$ 
+$$ \gamma_s = F_s(S_{obs}) = \mathbb{P}(S_j \leq S_{obs}) $$ 
 
 This can be performed in `pyCSEP` like this.
 
@@ -179,7 +179,7 @@ plt.show()
 
 Aim: The magnitude test aims to test the consistency of the observed frequency-magnitude distribution with that in the simulated catalogs that make up the forecast.
 
-Method: We first define the union catalog $\$\Lambda_U$ as the union of all simulated catalogs in the forecast. Formally:
+Method: We first define the union catalog $\Lambda_U$ as the union of all simulated catalogs in the forecast. Formally:
 
 $$ \Lambda_U = { \lambda_1 \cup \lambda_2 \cup ... \cup \lambda_j } $$
 
