@@ -7,7 +7,7 @@ It assumes that daily forecasts have been simulated by running
   ```bash
   python simulate_catalog_continuation.py [dataset] [day_of_forecast]
   ```
-Where [day_of_forecast] is the integer number of days from the beginning of the testing period and `[dataset]` is one of `ComCat_25|SaltonSea_10|SanJac_10|SCEDC_20|WHITE_06|`.
+Where `[day_of_forecast]` is the integer number of days from the beginning of the testing period and `[dataset]` is one of `ComCat_25|SaltonSea_10|SanJac_10|SCEDC_20|WHITE_06|`.
 
 We begin by loading pycsep along with some other required libraries.
 
@@ -145,12 +145,17 @@ plt.show()
 Aim: The spatial test again aims to isolate the spatial component of the forecast and test the consistency of spatial rates with observed events.
 
 Method We perform the spatial test using the expected earthquake rates $\hat{\lambda}_s$ (calculated and plotted above). The observed spatial test statistic is calculated as
+
 $$S_{obs} = \left[\sum_{i=1}^{N_{obs}}\log \hat{\lambda}_s(k_i) \right]N_{obs}^{-1}$$
+
 where $\hat{\lambda}_s(k_i)$ is the normalised approximate rate density in the $k^{th}$ cell corresponding to the $i^{th}$ event in the observed catalog.
 
 Similarly, we define the test distribution using
+
 $$S_c = \left[\sum_{i=1}^{N_{j}}\log \hat{\lambda}_s(k_{ij}) \right]N_{j}^{-1}; \ \ j=1,\dots,J$$ 
+
 Finally, the quantile score for the spatial test is determined by once again comparing the observed and test distribution statistics:
+
 $$\gamma_s = F_s(\hat{S}_{obs}) = \mathbb{P}(\hat{S}_j \leq \hat{S}_{obs}) $$ 
 
 This can be performed in `pyCSEP` like this.
