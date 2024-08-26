@@ -67,11 +67,11 @@ EarthquakeNPP contains a synthetic earthquake catalog of California generated us
 - **[License:](https://github.com/lmizrahi/etas?tab=MIT-1-ov-file)** MIT License, Copyright (c) 2024 ETH Zurich, Leila Mizrahi
 - **Credit:** etas (doi: 10.5281/zenodo.6583992)
 
-### [Japan](https://github.com/ss15859/EarthquakeNPP/tree/main/Datasets/Japan)
+### [Japan_Deprecated](https://github.com/ss15859/EarthquakeNPP/tree/main/Datasets/Japan)
 
-This first iteration of EarthquakeNPP focuses on California. However, another dataset `Japan_25` is included in the benchmarking experiment to compare against the previous work by Chen et al. [(2020)](https://arxiv.org/pdf/2011.04583), Zhou et al. [(2022)](https://arxiv.org/pdf/2112.06351), and Zhou et al. [(2024)](https://openreview.net/pdf?id=Deb1yP1zMN). Future iterations of EarthquakeNPP will include other region-wide experiments on active seismic areas such as Japan, New Zealand, and Italy.
+This first iteration of EarthquakeNPP focuses on California. However, another dataset `Japan_Deprecated` is included in the benchmarking experiment to compare against the previous work by Chen et al. [(2020)](https://arxiv.org/pdf/2011.04583), Zhou et al. [(2022)](https://arxiv.org/pdf/2112.06351), and Zhou et al. [(2024)](https://openreview.net/pdf?id=Deb1yP1zMN). Future iterations of EarthquakeNPP will include other region-wide experiments on active seismic areas such as Japan, New Zealand, and Italy.
 
-`Japan_25` is derived from the same Advanced National Seismic System (ANSS) Comprehensive Catalog of Earthquake Events and Products (ComCat) produced by the U.S. Geological Survey (USGS).
+`Japan_Deprecated` is derived from the same Advanced National Seismic System (ANSS) Comprehensive Catalog of Earthquake Events and Products (ComCat) produced by the U.S. Geological Survey (USGS).
 
 - **[License:](https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits)** USGS-authored or produced data and information are considered to be in the U.S. Public Domain.
 - **Credit:** U.S. Geological Survey, Department of the Interior/USGS. Visit the USGS at [https://usgs.gov](https://usgs.gov).
@@ -91,7 +91,15 @@ For all experiments run,
   python invert_etas.py [dataset]
   python predict_etas.py [dataset]
   ```
-Where `[dataset]` is one of `ComCat_25|synthetic_California_25|incomplete_California_25|SaltonSea_10|SanJac_10|SCEDC_20|SCEDC_25|SCEDC_30|WHITE_06|Japan_25`.
+Where `[dataset]` is one of `ComCat_25|synthetic_California_25|incomplete_California_25|SaltonSea_10|SanJac_10|SCEDC_20|SCEDC_25|SCEDC_30|WHITE_06|Japan_Deprecated`.
+
+To simulate daily forecasts run,
+  ```bash
+  cd Experiments/ETAS/
+  python simulate_catalog_continuation.py [dataset] [day_of_forecast]
+  ```
+Where [day_of_forecast] is the integer number of days from the beginning of the testing period.
+
 - **[License:](https://github.com/lmizrahi/etas?tab=MIT-1-ov-file)** MIT License, Copyright (c) 2024 ETH Zurich, Leila Mizrahi
 - **Credit:** etas (doi: 10.5281/zenodo.6583992)
 
@@ -112,7 +120,7 @@ For all experiments run,
   cd Experiments/neural_stpp/
   python train_stpp.py --data [dataset] --model attncnf --tpp neural --l2_attn --seed [seed]
   ```
-Where `[dataset]` is one of `ComCat_25|ETAS_25|ETAS_incomplete_25|SaltonSea_10|SanJac_10|SCEDC_20|SCEDC_25|SCEDC_30|WHITE_06|Japan_25`, and `[seed]` is one of `0|1|2`
+Where `[dataset]` is one of `ComCat_25|ETAS_25|ETAS_incomplete_25|SaltonSea_10|SanJac_10|SCEDC_20|SCEDC_25|SCEDC_30|WHITE_06|Japan_Deprecated`, and `[seed]` is one of `0|1|2`
 
 - **[License:](https://github.com/facebookresearch/neural_stpp?tab=License-1-ov-file)** CC BY-NC 4.0 License.
 - **Credit:** Chen, R. T., Amos, B., & Nickel, M. (2020). Neural spatio-temporal point processes. arXiv preprint arXiv:2011.04583.
@@ -126,7 +134,7 @@ For all experiments run,
   cd Experiments/AutoSTPP/
   make run_stpp_earthquakeNPP config=[dataset]_deep_stpp_seed_[seed]
   ```
-Where `[dataset]` is one of `ComCat_25|ETAS_25|ETAS_incomplete_25|SaltonSea_10|SanJac_10|SCEDC_20|SCEDC_25|SCEDC_30|WHITE_06|Japan_25`, and `[seed]` is one of `1553|1554|1555`
+Where `[dataset]` is one of `ComCat_25|ETAS_25|ETAS_incomplete_25|SaltonSea_10|SanJac_10|SCEDC_20|SCEDC_25|SCEDC_30|WHITE_06|Japan_Deprecated`, and `[seed]` is one of `1553|1554|1555`
 
 - **[License:](https://github.com/Rose-STL-Lab/AutoSTPP?tab=MIT-1-ov-file)** The MIT License (MIT), Copyright (c) 2022, Zihao Zhou
 - **Credit:** Zhou, Z., Yang, X., Rossi, R., Zhao, H., & Yu, R. (2022, May). Neural point process for learning spatiotemporal event dynamics. In Learning for Dynamics and Control Conference (pp. 777-789). PMLR.
@@ -140,7 +148,7 @@ For all experiments run,
   cd Experiments/AutoSTPP/
   make run_stpp_earthquakeNPP config=[dataset]_autoint_stpp_seed_[seed]
   ```
-Where `[dataset]` is one of `ComCat_25|ETAS_25|ETAS_incomplete_25|SaltonSea_10|SanJac_10|SCEDC_20|SCEDC_25|SCEDC_30|WHITE_06|Japan_25`, and `[seed]` is one of `1553|1554|1555`
+Where `[dataset]` is one of `ComCat_25|ETAS_25|ETAS_incomplete_25|SaltonSea_10|SanJac_10|SCEDC_20|SCEDC_25|SCEDC_30|WHITE_06|Japan_Deprecated`, and `[seed]` is one of `1553|1554|1555`
 
 - **[License:](https://github.com/Rose-STL-Lab/AutoSTPP?tab=MIT-1-ov-file)** The MIT License (MIT), Copyright (c) 2022, Zihao Zhou
 - **Credit:** Zhou, Z., & Yu, R. (2024). Automatic Integration for Spatiotemporal Neural Point Processes. Advances in Neural Information Processing Systems, 36.
