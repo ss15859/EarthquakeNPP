@@ -9,7 +9,7 @@ It assumes that daily forecasts have been simulated by running
   ```
 Where `[day_of_forecast]` is the integer number of days from the beginning of the testing period and `[dataset]` is one of `ComCat_25|SaltonSea_10|SanJac_10|SCEDC_20|WHITE_06|`.
 
-We begin by loading pycsep along with some other required libraries.
+We begin by loading `pyCSEP` along with some other required libraries.
 
 
 ```python
@@ -51,6 +51,8 @@ space_magnitude_region = regions.create_space_magnitude_region(region, magnitude
 ```
 
 ## Load the forecast data
+
+We will load and evaluate the forecast a week following the start of the testing period.
 
 
 ```python
