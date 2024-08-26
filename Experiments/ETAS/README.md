@@ -146,17 +146,17 @@ Aim: The spatial test again aims to isolate the spatial component of the forecas
 
 Method We perform the spatial test using the expected earthquake rates $\hat{\lambda}_s$ (calculated and plotted above). The observed spatial test statistic is calculated as
 
-$$S_{obs} = \left[\sum_{i=1}^{N_{obs}}\log \hat{\lambda}_s(k_i) \right]N_{obs}^{-1}$$
+$$ S_{obs} = \Bigg[\sum_{i=1}^{N_{obs}}\log \hat{\lambda}_s(k_i) \Bigg]N_{obs}^{-1} $$
 
 where $\hat{\lambda}_s(k_i)$ is the normalised approximate rate density in the $k^{th}$ cell corresponding to the $i^{th}$ event in the observed catalog.
 
 Similarly, we define the test distribution using
 
-$$S_c = \left[\sum_{i=1}^{N_{j}}\log \hat{\lambda}_s(k_{ij}) \right]N_{j}^{-1}; \ \ j=1,\dots,J$$ 
+$$ S_c = \Bigg[\sum_{i=1}^{N_{j}}\log \hat{\lambda}_s(k_{ij}) \Bigg]N_{j}^{-1}; \ \ j=1,\dots,J $$ 
 
 Finally, the quantile score for the spatial test is determined by once again comparing the observed and test distribution statistics:
 
-$$\gamma_s = F_s(\hat{S}_{obs}) = \mathbb{P}(\hat{S}_j \leq \hat{S}_{obs}) $$ 
+$$ \gamma_s = F_s(\hat{S}_{obs}) = \mathbb{P}(\hat{S}_j \leq \hat{S}_{obs}) $$ 
 
 This can be performed in `pyCSEP` like this.
 
