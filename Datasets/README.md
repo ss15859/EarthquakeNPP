@@ -6,7 +6,7 @@ Each preprocessed dataset is also included within each subdirectory.
 
 ## Data Format
 
-The datasets follow the following `.csv` format:
+The datasets follow the `.csv` format:
 
 | id    | time                    | longitude  | latitude  | magnitude | x               | y               |
 |-------|-------------------------|------------|-----------|-----------|-----------------|-----------------|
