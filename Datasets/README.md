@@ -19,7 +19,7 @@ The datasets follow the following format:
 
 - **id**: The event identification number is a unique number assigned to every event in the earthquake catalog.
 
-- **time**: Time when the event occurred. Times are reported in milliseconds since the epoch (`1970-01-01T00:00:00.000Z`) and do not include leap seconds.
+- **time**: The time when the event occurred, represented in a human-readable format: YYYY-MM-DD HH:MM:SS.sss.
 
   We indicate the date and time when the earthquake initiates rupture, which is known as the "origin" time. Note that large earthquakes can continue rupturing for many tens of seconds. We provide time in UTC (Coordinated Universal Time). Seismologists use UTC to avoid confusion caused by local time zones and daylight savings time. On the individual event pages, times are also provided for the time at the epicenter and your local time based on the time your computer is set.
 
@@ -37,7 +37,7 @@ The datasets follow the following format:
 
 - **x, y**: Azimuthal equidistant projection of coordinates (latitude, longitude).
 
-  Since ETAS uses the great-circle distance between two points on a sphere (km), we project the coordinates of the events into a space where inter-event distances are in kilometers using the Azimuthal equidistant projection.
+  Since ETAS uses the great-circle distance between two points on a sphere (km), we project the coordinates of the events into a space where inter-event distances are in kilometers using the Azimuthal equidistant projection. NPPs should use these columns as the spatial locations of each earthquake.
 
 ## Dataset Partitioning
 
