@@ -11,8 +11,9 @@ The datasets follow the following format:
 | id    | time                    | longitude  | latitude  | magnitude | x               | y               |
 |-------|-------------------------|------------|-----------|-----------|-----------------|-----------------|
 | 12036 | 1971-01-01 20:36:17.720 | -119.4328333 | 33.8986667 | 2.91      | -221.8284296413594 | -52.446501577338154 |
-|  |  |  |  |       |  |  |
-|  |  |  |  |       |  |  |
+| &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; |
+| &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; |
+
 
 ### Field Descriptions
 
