@@ -4,6 +4,28 @@ Each subdirectory provides information on the construction of each EarthquakeNPP
 
 Each preprocessed dataset is also included within each subdirectory.
 
+#### Official EarthquakeNPP datasets
+
+The following datasets are considered to be the official EarthquakeNPP datasets.
+
+`ComCat_25`, `SCEDC_20`, `SCEDC_25` and `SCEDC_30` represent datasets currently being used for operational/realtime forecasting in California by the [USGS](https://earthquake.usgs.gov/earthquakes/eventpage/ci40699207/executive). Different magnitude thresholds of the `SCEDC` catalog allow us to assess how magnitude threshold affects forecasting performance.
+
+`QTM_SaltonSea_10`, `QTM_SanJac_10` and `WHITE_06` represent modern high resolution catalogs that contain very low magnitude earthquakes. This allows us to assess whether NPPs can exploit any additional signal that is found within the low magnitude events.
+
+Our recommendation would be to use `ComCat_25` and `WHITE_06` as datasets for general benchmarking of NPPs in multi-domain experiments. 
+
+#### Additional datasets
+
+We include 3 additional datasets in the benchmarking experiment for various reasons:
+
+`Japan_Deprecated`:
+
+We include this dataset to provide a continuity between our platform and previous NPP benchmarking on earthquakes. However, since this dataset does not represent complete data of the region, it is not considered to be an official EarthquakeNPP benchmark. A future version of EarthquakeNPP will contain extensive datasets of Japan in a similar manner to our current focus on California.
+
+`ETAS_25`, `ETAS_incomplete_25`:
+
+We include these synthetic ETAS generated datasets to artificially recreate the data missingness often present following large magnitude events. This allows us to test whether NPPs are inhibited by data missingness to the same extent that ETAS is.
+
 ## Data Format
 
 The datasets follow the `.csv` format:
@@ -55,5 +77,4 @@ For use in the benchmarking experiment, each catalog is partitioned for training
 | ETAS         | 1.0 | 1971-01-01      | 1981-01-01     | 1998-01-01       | 2007-01-01    | 2020-01-17  | 117,550             | 43,327             |
 | ETAS_mc(t)   | 1.0 | 1971-01-01      | 1981-01-01     | 1998-01-01       | 2007-01-01    | 2020-01-17  | 115,115             | 42,932             |
 | Japan_Deprecated   | 2.5 | 1990-01-01      | 1992-01-01     | 2007-01-01       | 2011-01-01    | 2020-01-01  | 22,213             | 15,368             |
-
 
