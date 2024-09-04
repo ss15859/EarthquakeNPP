@@ -103,28 +103,6 @@ Where [day_of_forecast] is the integer number of days from the beginning of the 
 - **[License:](https://github.com/lmizrahi/etas?tab=MIT-1-ov-file)** MIT License, Copyright (c) 2024 ETH Zurich, Leila Mizrahi
 - **Credit:** etas (doi: 10.5281/zenodo.6583992)
 
-### [NSTPP](https://github.com/ss15859/neural_stpp/tree/c80bca36698846443d01e04c455d956e2cb0cff9)
-
-A NPP that parameterizes the spatial probability density function with continuous-time normalizing flows (CNFs). For the benchmarking experiment we use their Attentive CNF model for its computational efficiency and overall performance versus their other model Jump CNF ([Chen et al., 2020](https://arxiv.org/pdf/2011.04583)).
-
-To setup,
-
-  ```bash
-  cd Experiments/neural_stpp/
-  python setup.py build_ext --inplace
-  ```
-
-For all experiments run,
-
-  ```bash
-  cd Experiments/neural_stpp/
-  python train_stpp.py --data [dataset] --model attncnf --tpp neural --l2_attn --seed [seed]
-  ```
-Where `[dataset]` is one of `ComCat_25|ETAS_25|ETAS_incomplete_25|SaltonSea_10|SanJac_10|SCEDC_20|SCEDC_25|SCEDC_30|WHITE_06|Japan_Deprecated`, and `[seed]` is one of `0|1|2`
-
-- **[License:](https://github.com/facebookresearch/neural_stpp?tab=License-1-ov-file)** CC BY-NC 4.0 License.
-- **Credit:** Chen, R. T., Amos, B., & Nickel, M. (2020). Neural spatio-temporal point processes. arXiv preprint arXiv:2011.04583.
-
 ### [Deep-STPP](https://github.com/ss15859/AutoSTPP/tree/25aec04f9f9ce38c852a310970a7181e09701462)
 
 A NPP that constructs a non parametric space-time intensity function governed by a deep latent process ([Zhou et al., 2022](https://arxiv.org/pdf/2112.06351)).
@@ -152,3 +130,25 @@ Where `[dataset]` is one of `ComCat_25|ETAS_25|ETAS_incomplete_25|SaltonSea_10|S
 
 - **[License:](https://github.com/Rose-STL-Lab/AutoSTPP?tab=MIT-1-ov-file)** The MIT License (MIT), Copyright (c) 2022, Zihao Zhou
 - **Credit:** Zhou, Z., & Yu, R. (2024). Automatic Integration for Spatiotemporal Neural Point Processes. Advances in Neural Information Processing Systems, 36.
+
+### [NSTPP](https://github.com/ss15859/neural_stpp/tree/c80bca36698846443d01e04c455d956e2cb0cff9)
+
+A NPP that parameterizes the spatial probability density function with continuous-time normalizing flows (CNFs). For the benchmarking experiment we use their Attentive CNF model for its computational efficiency and overall performance versus their other model Jump CNF ([Chen et al., 2020](https://arxiv.org/pdf/2011.04583)).
+
+To setup,
+
+  ```bash
+  cd Experiments/neural_stpp/
+  python setup.py build_ext --inplace
+  ```
+
+For all experiments run,
+
+  ```bash
+  cd Experiments/neural_stpp/
+  python train_stpp.py --data [dataset] --model attncnf --tpp neural --l2_attn --seed [seed]
+  ```
+Where `[dataset]` is one of `ComCat_25|ETAS_25|ETAS_incomplete_25|SaltonSea_10|SanJac_10|SCEDC_20|SCEDC_25|SCEDC_30|WHITE_06|Japan_Deprecated`, and `[seed]` is one of `0|1|2`
+
+- **[License:](https://github.com/facebookresearch/neural_stpp?tab=License-1-ov-file)** CC BY-NC 4.0 License.
+- **Credit:** Chen, R. T., Amos, B., & Nickel, M. (2020). Neural spatio-temporal point processes. arXiv preprint arXiv:2011.04583.
