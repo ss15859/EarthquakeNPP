@@ -122,7 +122,7 @@ $$\delta_1 = \mathbb{P}(N_j \geq N_{obs}) = 1 - F_N(N_{obs}-1)$$
 
 and
 
-$$\delta_2 = \mathbb{P}(N_j \leq N_{obs}) = 1 - F_N(N_{obs})$$
+$$\delta_2 = \mathbb{P}(N_j \leq N_{obs}) = F_N(N_{obs})$$
 
 This can be performed in `pyCSEP` like this.
 
