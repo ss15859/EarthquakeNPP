@@ -4,3 +4,6 @@
 [submodule "Experiments/neural_stpp"]
 	path = Experiments/neural_stpp
 	url = https://github.com/ss15859/neural_stpp.git
+[submodule "Experiments/SMASH"]
+	path = Experiments/SMASH
+	url = https://github.com/ss15859/SMASH.git

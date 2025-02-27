@@ -16,6 +16,21 @@ import geopandas as gpd
 
 
 def download_USGS_data(start_time, end_time, max_lat, min_lat, max_lon, min_lon, minimum_magnitude):
+	"""
+	Downloads earthquake data from the USGS website for a specified time range and geographical area.
+
+	Parameters:
+	- start_time (datetime): Start time for the data query.
+	- end_time (datetime): End time for the data query.
+	- max_lat (float): Maximum latitude of the area.
+	- min_lat (float): Minimum latitude of the area.
+	- max_lon (float): Maximum longitude of the area.
+	- min_lon (float): Minimum longitude of the area.
+	- minimum_magnitude (float): Minimum magnitude of earthquakes to include.
+
+	Returns:
+	- str: Filename of the downloaded CSV file.
+	"""
 	url = (
 		"https://earthquake.usgs.gov/fdsnws/event/1/query.csv?"
 		f"starttime={start_time.strftime('%Y-%m-%dT%H:%M:%S')}&endtime={end_time.strftime('%Y-%m-%dT%H:%M:%S')}"
@@ -29,6 +44,24 @@ def download_USGS_data(start_time, end_time, max_lat, min_lat, max_lon, min_lon,
 	return filename
 
 def download_USGS_in_windows(start_year, start_month, end_year, end_month, window_size_months, max_lat, min_lat, max_lon, min_lon, minimum_magnitude):
+	"""
+	Downloads earthquake data in monthly windows from the USGS website.
+
+	Parameters:
+	- start_year (int): Start year for the data query.
+	- start_month (int): Start month for the data query.
+	- end_year (int): End year for the data query.
+	- end_month (int): End month for the data query.
+	- window_size_months (int): Size of each window in months.
+	- max_lat (float): Maximum latitude of the area.
+	- min_lat (float): Minimum latitude of the area.
+	- max_lon (float): Maximum longitude of the area.
+	- min_lon (float): Minimum longitude of the area.
+	- minimum_magnitude (float): Minimum magnitude of earthquakes to include.
+
+	Returns:
+	- list: List of filenames of the downloaded CSV files.
+	"""
 	filenames = []
 	current_start = datetime(start_year, start_month, 1)
 	end_time = datetime(end_year, end_month, 1) + relativedelta(months=1) - timedelta(seconds=1)
@@ -43,6 +76,17 @@ def download_USGS_in_windows(start_year, start_month, end_year, end_month, windo
 
 
 def combine_csv_files(filenames, destination_path, chunksize=100000):
+	"""
+	Combines multiple CSV files into a single CSV file.
+
+	Parameters:
+	- filenames (list): List of CSV filenames to combine.
+	- destination_path (str): Path to save the combined CSV file.
+	- chunksize (int): Number of rows per chunk to read at a time.
+
+	Returns:
+	- None
+	"""
 	with open(destination_path, 'w') as wfd:
 		for i, f in enumerate(filenames):
 			for chunk in pd.read_csv(f, chunksize=chunksize):
@@ -50,6 +94,16 @@ def combine_csv_files(filenames, destination_path, chunksize=100000):
 
 # Function to download the file
 def download_file(url, local_filename):
+	"""
+	Downloads a file from a given URL.
+
+	Parameters:
+	- url (str): URL of the file to download.
+	- local_filename (str): Local path to save the downloaded file.
+
+	Returns:
+	- None
+	"""
 	with requests.get(url, stream=True) as response:
 		response.raise_for_status()  # Check if the request was successful
 		with open(local_filename, 'wb') as file:
@@ -58,6 +112,16 @@ def download_file(url, local_filename):
 	print(f"Downloaded {local_filename}")
 
 def extract_tar_gz(filename, extract_path):
+	"""
+	Extracts a .tar.gz file to a specified directory.
+
+	Parameters:
+	- filename (str): Path to the .tar.gz file.
+	- extract_path (str): Directory to extract the contents to.
+
+	Returns:
+	- None
+	"""
 	if not os.path.exists(extract_path):
 		os.makedirs(extract_path)
 	with tarfile.open(filename, "r:gz") as tar:
@@ -67,6 +131,16 @@ def extract_tar_gz(filename, extract_path):
 	os.rename('SCEC_DC','raw')
 
 def extract_zip(zip_file_path, extract_path):
+	"""
+	Extracts a .zip file to a specified directory.
+
+	Parameters:
+	- zip_file_path (str): Path to the .zip file.
+	- extract_path (str): Directory to extract the contents to.
+
+	Returns:
+	- None
+	"""
 	if not os.path.exists(extract_path):
 		os.makedirs(extract_path)
 	with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
@@ -76,7 +150,16 @@ def extract_zip(zip_file_path, extract_path):
 	os.remove(zip_file_path)
 
 def download_txt_file(url,destination_path):
+	"""
+	Downloads a text file from a given URL and converts it to a CSV file.
 
+	Parameters:
+	- url (str): URL of the text file to download.
+	- destination_path (str): Directory to save the converted CSV file.
+
+	Returns:
+	- None
+	"""
 	if not os.path.exists(destination_path):
 		os.makedirs(destination_path)
 
@@ -124,6 +207,15 @@ def download_txt_file(url,destination_path):
 	# os.rename('SCEC_DC','raw')
 
 def combine_ascii_files(catalog_directory):
+	"""
+	Combines multiple ASCII earthquake catalog files into a single CSV file.
+
+	Parameters:
+	- catalog_directory (str): Directory containing the catalog files.
+
+	Returns:
+	- None
+	"""
 	# Merge earthquake catalogs into a single DataFrame
 	all_data = []
 	for file in os.listdir(catalog_directory):
@@ -168,7 +260,16 @@ def combine_ascii_files(catalog_directory):
 
 
 def fmd(mag, mbin):
+	"""
+	Computes the frequency-magnitude distribution of earthquakes.
 
+	Parameters:
+	- mag (array-like): Array of earthquake magnitudes.
+	- mbin (float): Magnitude bin size.
+
+	Returns:
+	- dict: Dictionary containing magnitude bins, cumulative counts, and non-cumulative counts.
+	"""
 	mag = np.array(mag)
 
 	mi = np.arange(min(np.round(mag/mbin)*mbin), max(np.round(mag/mbin)*mbin),mbin)
@@ -189,7 +290,16 @@ def fmd(mag, mbin):
 
 
 def maxc(mag, mbin):
+	"""
+	Determines the magnitude of completeness (Mc) from the frequency-magnitude distribution.
 
+	Parameters:
+	- mag (array-like): Array of earthquake magnitudes.
+	- mbin (float): Magnitude bin size.
+
+	Returns:
+	- float: Magnitude of completeness (Mc).
+	"""
 	FMD = fmd(mag, mbin)
 
 	if len(FMD['noncum'])>0:
@@ -202,16 +312,35 @@ def maxc(mag, mbin):
 
 	return Mc
 
+def deg2rad(deg):
+    return deg * np.pi / 180
 
-def azimuthal_equidistant_projection(latitude, longitude, center_latitude, center_longitude):
-	R = 6371  # Earth's radius in kilometers
-	phi1 = np.radians(center_latitude)
-	phi2 = np.radians(latitude)
-	delta_lambda = np.radians(longitude - center_longitude)
+def rad2deg(rad):
+    return rad * 180 / np.pi
 
-	delta_sigma = np.arccos(np.sin(phi1) * np.sin(phi2) + np.cos(phi1) * np.cos(phi2) * np.cos(delta_lambda))
-	azimuth = np.arctan2(np.sin(delta_lambda), np.cos(phi1) * np.tan(phi2) - np.sin(phi1) * np.cos(delta_lambda))
+def azimuthal_equidistant_projection(lat, lon, lat0, lon0, R=6371):
+	"""
+	Forward azimuthal equidistant projection.
+	Converts (lat, lon) to (x, y) with respect to a center (lat0, lon0).
 
-	x = R * delta_sigma * np.cos(azimuth)
-	y = R * delta_sigma * np.sin(azimuth)
+	Parameters:
+	- lat (float): Latitude to project (degrees).
+	- lon (float): Longitude to project (degrees).
+	- lat0 (float): Center latitude of the projection (degrees).
+	- lon0 (float): Center longitude of the projection (degrees).
+	- R (float): Radius of the sphere (default: Earth radius in km).
+
+	Returns:
+	- tuple: Projected coordinates (x, y) in km.
+	"""
+	lat, lon, lat0, lon0 = map(deg2rad, [lat, lon, lat0, lon0])
+	
+	delta_lambda = lon - lon0
+	
+	c = np.arccos(np.sin(lat0) * np.sin(lat) + np.cos(lat0) * np.cos(lat) * np.cos(delta_lambda))
+	
+	k = np.where(c == 0, 0, R * c / np.sin(c))
+	y = k * np.cos(lat) * np.sin(delta_lambda)
+	x = k * (np.cos(lat0) * np.sin(lat) - np.sin(lat0) * np.cos(lat) * np.cos(delta_lambda))
+	
 	return x, y
