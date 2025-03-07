@@ -1,19 +1,20 @@
 #!/bin/bash
-#PBS -N romeq
-#PBS -q romeq
-#PBS -l select=1:ncpus=1
-#PBS -l walltime=200:00:00
+#SBATCH --job-name=train_ETAS
+#SBATCH --nodes=1
+#SBATCH --tasks-per-node=1
+#SBATCH --cpus-per-task=8
+#SBATCH --time=2-00:00:00
+#SBATCH --mem=20G
+#SBATCH --account=MATH026082
 
-cd $PBS_O_WORKDIR
+# Load conda environment
+source /user/work/ss15859/miniforge3/etc/profile.d/conda.sh
+conda activate earthquakeNPP
 
-module list
+# Get the config name from the command line argument
+CONFIG=$1
 
-pwd
-
-echo $CUDA_VISIBLE_DEVICES
-
-# Load local python environment
-source activate earthquakeNPP
-
-python invert_etas.py $CONFIG
+# Run the ETAS scripts with the provided config
+python invert_etas.py "$CONFIG"
+python predict_etas.py "$CONFIG"
 

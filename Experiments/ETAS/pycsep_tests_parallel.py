@@ -76,7 +76,7 @@ if __name__ == '__main__':
 	parameter_dr = home_path+'/parameters_0.json'
 
 	with open(parameter_dr, 'r') as f:
-	        inversion_output = json.load(f)
+			inversion_output = json.load(f)
 
 
 	# Magnitude bins properties

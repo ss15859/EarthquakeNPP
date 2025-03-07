@@ -7,3 +7,6 @@ Datasets/**/.ipynb_checkpoints/
 
 # Ignore _pycache_
 Datasets/__pycache__
+
+# Ignore TODO.md file
+TODO.md
