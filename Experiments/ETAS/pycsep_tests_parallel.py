@@ -13,7 +13,6 @@ import json
 
 
 if __name__ == '__main__':
-
 	# HPC_path = '/user/work/ss15859/'
 	HPC_path = ''
 

@@ -8,5 +8,13 @@ Datasets/**/.ipynb_checkpoints/
 # Ignore _pycache_
 Datasets/__pycache__
 
+# Ignore ETAS output files and their contents
+Experiments/ETAS/output*/
+Experiments/ETAS/output*/*
+
 # Ignore TODO.md file
 TODO.md
+
+#tmp python files
+Experiments/ETAS/plot_quantiles.py
+Experiments/ETAS/make_pycsep_catalogs.py
