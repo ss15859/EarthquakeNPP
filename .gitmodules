@@ -7,3 +7,6 @@
 [submodule "Experiments/SMASH"]
 	path = Experiments/SMASH
 	url = https://github.com/ss15859/SMASH.git
+[submodule "Experiments/Spatio-temporal-Diffusion-Point-Processes"]
+	path = Experiments/Spatio-temporal-Diffusion-Point-Processes
+	url = https://github.com/ss15859/Spatio-temporal-Diffusion-Point-Processes.git
