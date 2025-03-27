@@ -6,11 +6,14 @@ Datasets/.ipynb_checkpoints/
 Datasets/**/.ipynb_checkpoints/
 
 # Ignore _pycache_
-Datasets/__pycache__
+__pycache__
 
 # Ignore ETAS output files and their contents
 Experiments/ETAS/output*/
 Experiments/ETAS/output*/*
+
+# ignore CSEP tests output files
+Experiments/CSEP_tests/plots/
 
 # Ignore TODO.md file
 TODO.md
@@ -18,3 +21,4 @@ TODO.md
 #tmp python files
 Experiments/ETAS/plot_quantiles.py
 Experiments/ETAS/make_pycsep_catalogs.py
+Experiments/ETAS/move_files.sh

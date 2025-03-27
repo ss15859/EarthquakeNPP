@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "--model", "ETAS",
+                "--dataset", "SCEDC",
+                "--start_day", "2010",
+                "--end_day", "2013"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "/home/ss15859/Documents/EarthquakeNPP/Experiments/CSEP_tests" // Set the working directory to the root of your workspace
+        }
+    ]
+}
