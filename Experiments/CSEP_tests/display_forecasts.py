@@ -141,6 +141,135 @@ def plot_number_forecasts(model_paths, start_day, end_day, dataset, min_magnitud
 	plt.savefig(f'plots/number_{dataset}_{"_".join([model["model"] for model in model_paths])}_{start_day}_{end_day}.png')
 
 
+def plot_cummulative_forecasts(model_paths, start_day, end_day, dataset, min_magnitude, region, test_nll_start):
+
+
+	#convert start_day and end_day to datetime objects
+	test_nll_start_dt = datetime.strptime(test_nll_start, '%Y-%m-%d %H:%M:%S')
+
+	start_time_dt = test_nll_start_dt + timedelta(days=start_day)
+	end_time_dt = test_nll_start_dt + timedelta(days=end_day+1)
+
+	start_time = csep.utils.time_utils.datetime_to_utc_epoch(start_time_dt)
+	end_time = csep.utils.time_utils.datetime_to_utc_epoch(end_time_dt)
+
+
+	# Create space-magnitude region
+	min_mw = min_magnitude
+	max_mw = 7.65
+	dmw = 0.1
+	magnitudes = regions.magnitude_bins(min_mw, max_mw, dmw)
+	space_magnitude_region = regions.create_space_magnitude_region(region, magnitudes)
+
+
+	# Define observed catalog
+	cat = csep.load_catalog(catalog_path)
+	cat = cat.filter(f'magnitude >= {min_mw}')
+	cat = cat.filter(f'origin_time >= {start_time}')
+	cat = cat.filter(f'origin_time < {end_time}')
+
+
+	catalog = cat.to_dataframe(with_datetime=True)
+
+	catalog['datetime'] = catalog['datetime'].dt.tz_localize(None)
+
+	# Compute cumulative count
+	catalog['cumulative_count'] = range(1, len(catalog) + 1)
+
+	#make a datapoint at the end of the last day with no increase in cumulative count
+	catalog = catalog._append({'datetime': end_time_dt, 'cumulative_count': catalog['cumulative_count'].iloc[-1]}, ignore_index=True)
+
+	# Set up plot
+	fig, ax1 = plt.subplots(figsize=(10, 8))
+	ax1.set_facecolor((0.95, 0.95, 0.95))
+
+	# Create twin axis for magnitudes
+	ax2 = ax1.twinx()
+	z = (4**catalog['magnitude'])*0.05
+	# ax1.scatter(catalog['datetime'], catalog['magnitude'], color=colors[3], s=z, alpha=0.8, zorder=-10)
+
+	ax2.plot(catalog['datetime'], catalog['cumulative_count'], label='Cumulative Count', color='black', lw=2, zorder=2)
+
+	# Move ax1 y-axis to the right
+	ax1.yaxis.set_label_position("right")
+	ax1.yaxis.tick_right()
+
+	# Move ax2 y-axis to the left
+	ax2.yaxis.set_label_position("left")
+	ax2.yaxis.tick_left()
+
+	# Process each model
+	for i, model_path in enumerate(model_paths):
+		model = model_path['model']
+		forecast_folder = model_path['test_results_path']
+		forecast_quantiles = []
+		mean_catalog_df = pd.DataFrame()
+		lq_catalog_df = pd.DataFrame()
+		uq_catalog_df = pd.DataFrame()
+
+
+		for day in range(start_day, end_day+1):
+			date = test_nll_start_dt + timedelta(days=day)
+			forecast_file = os.path.join(forecast_folder, f'tests_CSEP_day_{day}_number.json')
+			
+			if os.path.exists(forecast_file):
+				with open(forecast_file, 'r') as f:
+					forecast_data = json.load(f)
+					forecast_data = forecast_data['test_distribution']
+				
+				# Compute 95% quantile
+				lower_quantile = np.percentile(forecast_data, 2.5)  # Lower bound of 95% interval
+				upper_quantile = np.percentile(forecast_data, 97.5)  # Upper bound of 95% interval
+				mean = np.mean(forecast_data)
+				
+				path_to_forecast_day = os.path.join(model_path['forecast_dir'], f'CSEP_day_{day}.csv')
+				df = pd.read_csv(path_to_forecast_day)
+				#convert timestring to datetime
+				df['time_string'] = pd.to_datetime(df['time_string'])
+				df['time_string'] = df['time_string'].dt.tz_localize(None)
+				df['datetime'] = df['time_string']
+
+				df = df.sort_values(by='datetime')
+				df['cumulative_count'] = range(1, len(df) + 1)
+
+				event_counts = df.groupby("catalog_id").size().reset_index(name="num_events")
+				
+				# find the first row of event counts where num_events  = lower_quantile, upper_quantile, mean all rounded to the nearest integer
+				# lower_quantile_row = event_counts.loc[(event_counts['num_events'] - lower_quantile).abs().argsort()[:1]]
+				# upper_quantile_row = event_counts.loc[(event_counts['num_events'] - upper_quantile).abs().argsort()[:1]]
+				mean_row = event_counts.loc[(event_counts['num_events'] - mean).abs().argsort()[:1]]
+
+				# lq_catalog_df = pd.concat([lq_catalog_df, df.loc[df['catalog_id'].isin(lower_quantile_row['catalog_id'])]])
+				# uq_catalog_df = pd.concat([uq_catalog_df, df.loc[df['catalog_id'].isin(upper_quantile_row['catalog_id'])]])
+				mean_catalog_df = pd.concat([mean_catalog_df, df.loc[df['catalog_id'].isin(mean_row['catalog_id'])]])
+				mean_catalog_df = mean_catalog_df[mean_catalog_df['mag']>=min_magnitude]
+
+
+			else:
+				print(f"File {forecast_file} not found")
+				
+
+		ax2.step(mean_catalog_df['datetime'], range(1, len(mean_catalog_df) + 1), 
+		   label=f'{model} Mean Forecast', 
+		   color = 'red' if model == 'SMASH' else 'green' if model == 'ETAS' else 'yellow', 
+		   lw=2, 
+		   zorder=2)
+	# ax2.step(lq_catalog_df['datetime'], range(1, len(lq_catalog_df) + 1), label=f'{model} Lower Quantile Forecast', color='green', lw=2, zorder=2)
+	# ax2.step(uq_catalog_df['datetime'], range(1, len(uq_catalog_df) + 1), label=f'{model} Upper Quantile Forecast', color='yellow', lw=2, zorder=2)
+	ax2.xaxis.set_major_formatter(mdates.DateFormatter('%d-%b-%Y'))
+	# Add labels and legend
+	ax2.set_xlabel('Date', fontsize=12)
+	ax2.set_ylabel('Cumulative Count',color=colors[0], fontsize=12)
+	ax2.tick_params(axis='y', labelsize=12, colors=colors[0])
+	# ax1.set_ylabel('Magnitude',color=colors[3], fontsize=12)
+	# ax1.tick_params(axis='y', labelsize=12, colors=colors[3])
+	ax2.legend(fontsize=10, loc='lower right')
+	plt.tight_layout()
+	plt.savefig(f'plots/cumulative_{dataset}_{"_".join([model["model"] for model in model_paths])}_{start_day}_{end_day}.png')
+	plt.show()
+
+
+
 
 def plot_spatial_forecasts(model_paths, start_day, end_day, dataset, min_magnitude, region, test_nll_start):
 	# Convert start_day and end_day to datetime objects
@@ -406,6 +535,8 @@ if __name__ == "__main__":
 			'test_results_path': test_results_path
 		})
 
+
+
 	# plot_number_forecasts(
 	# 	model_paths=model_paths,
 	# 	start_day=args.start_day,
@@ -415,6 +546,18 @@ if __name__ == "__main__":
 	# 	region=region,
 	# 	test_nll_start=test_nll_start
 	# )
+
+	Mc = 3.95
+
+	plot_cummulative_forecasts(
+		model_paths=model_paths,
+		start_day=args.start_day,
+		end_day=args.end_day,
+		dataset=args.dataset,
+		min_magnitude=Mc,
+		region=region,
+		test_nll_start=test_nll_start
+	)
 
 
 	# plot_spatial_forecasts(
@@ -428,5 +571,5 @@ if __name__ == "__main__":
 	# )
 
 	
-	bind_res_df, cat_df = retrieve_test_results(args.test_type, model_paths, args.start_day, args.end_day, args.dataset, Mc, region, test_nll_start)
-	plot_gamma_m_res(bind_res_df, cat_df, args.test_type)
+	# bind_res_df, cat_df = retrieve_test_results(args.test_type, model_paths, args.start_day, args.end_day, args.dataset, Mc, region, test_nll_start)
+	# plot_gamma_m_res(bind_res_df, cat_df, args.test_type)
