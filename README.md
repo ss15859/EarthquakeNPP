@@ -1,4 +1,4 @@
-# EarthquakeNPP: Benchmark Datasets for Earthquake Forecasting with Neural Point Processes
+# EarthquakeNPP: A Benchmark for Earthquake Forecasting with Neural Point Processes
 
 EarthquakeNPP is an expanding collection of benchmark datasets designed to facilitate testing of Neural Point Processes (NPPs) on earthquake data. The datasets are accompanied by an implementation of the Epidemic-Type Aftershock Sequence (ETAS) model, currently considered the benchmark forecasting model in the seismology community. Derived from publicly available raw data, these datasets undergo processing and configuration to support forecasting experiments relevant to stakeholders in seismology. The datasets cover various regions of California, representing typical forecasting zones and the data commonly available to forecast issuers. Several datasets include much smaller magnitude earthquakes thanks to modern algorithms for detection and dense seismic networks.
 

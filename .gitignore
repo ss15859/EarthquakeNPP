@@ -1,9 +1,15 @@
 # Ignore all 'raw' directories inside the 'Datasets' directory
 Datasets/**/raw/
 
+Stockman_et_al/
+
+Experiments/CSEP_tests/
+
 # Ignore ipynb checkpoints
 Datasets/.ipynb_checkpoints/
 Datasets/**/.ipynb_checkpoints/
+
+Datasets/China
 
 # Ignore _pycache_
 __pycache__
