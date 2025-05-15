@@ -152,3 +152,45 @@ Where `[dataset]` is one of `ComCat_25|ETAS_25|ETAS_incomplete_25|SaltonSea_10|S
 
 - **[License:](https://github.com/facebookresearch/neural_stpp?tab=License-1-ov-file)** CC BY-NC 4.0 License.
 - **Credit:** Chen, R. T., Amos, B., & Nickel, M. (2020). Neural spatio-temporal point processes. arXiv preprint arXiv:2011.04583.
+
+
+### [SMASH](https://github.com/ss15859/SMASH/tree/main)
+
+ A generative NPP that lacks a likelihood function. SMASH adopts a normalization-free objective by estimating the pseudolikelihood of marked STPPs through score-matching ([li et al., 2023](https://arxiv.org/pdf/2310.16310))
+
+ To train the model run,
+  ```bash
+  cd Experiments/SMASH/scripts
+  bash train_[dataset].sh
+  ```
+  Where `[dataset]` is one of `ComCat|SCEDC|SanJac|SaltonSea|WHITE`.
+
+  To simulate daily forecasts run,
+  ```bash
+  cd Experiments/SMASH/scripts
+  bash simulate_[dataset].sh [day of forecast] [batch size]
+  ```
+  Where `[day_of_forecast]` is the integer number of days from the beginning of the testing period and `[batch size]` specifies how many repeats to generate at once.
+
+- **Credit:** Li, Z., Xu, Q., Xu, Z., Mei, Y., Zhao, T., & Zha, H. (2023). Score Matching-based Pseudolikelihood Estimation of Neural Marked Spatio-Temporal Point Process with Uncertainty Quantification. arXiv preprint arXiv:2310.16310.
+
+
+### [DSTPP](https://github.com/ss15859/Spatio-temporal-Diffusion-Point-Processes/tree/main)
+
+A generative NPP that does not have a likelihood function. DSTPP employs diffusion models to capture complex spatio-temporal dynamics.
+
+To train the model run,
+  ```bash
+  cd Experiments/Spatio-temporal-Diffusion-Point-Processes/scripts
+  bash train_[dataset].sh
+  ```
+  Where `[dataset]` is one of `ComCat|SCEDC|SanJac|SaltonSea|WHITE`.
+
+  To simulate daily forecasts run,
+  ```bash
+  cd Experiments/Spatio-temporal-Diffusion-Point-Processes/scripts
+  bash simulate_[dataset].sh [day of forecast] [batch size]
+  ```
+  Where `[day_of_forecast]` is the integer number of days from the beginning of the testing period and `[batch size]` specifies how many repeats to generate at once.
+
+  - **Credit:** Yuan, Y., Ding, J., Shao, C., Jin, D., & Li, Y. (2023, August). Spatio-temporal diffusion point processes. In Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (pp. 3173-3184).
