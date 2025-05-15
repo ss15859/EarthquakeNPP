@@ -8,3 +8,14 @@ Chen et al. [(2020)]((https://arxiv.org/pdf/2011.04583)) split the data into win
 
 Furthermore, for Chen et al. [(2020)]((https://arxiv.org/pdf/2011.04583)) 's implementation of NSTPP: "spatial variables have been standardized using the empirical mean and standard deviation from the training set". In order for all log-likelihood values to be scaled equivalently,  $\log(\det(\Sigma))$ has to be subtracted from the spatial component of the log-likelihood for NSTPP, where $\Sigma$ is the standard deviation matrix of the training set.
 
+## CSEP Tests
+
+To perform CSEP consistency tests run,
+
+```bash
+python run_pycsep_tests.py --model [model] --dataset [dataset] --test_day [test_day]
+```
+
+Where `[model]` is one of `ETAS|SMASH|DSTPP`, `[dataset]` is one of `ComCat|SCEDC|SanJac|SaltonSea|WHITE` and  `[test_day]` is the integer number of days from the beginning of the testing period.
+
+Further details of CSEP tests can be found [here](https://docs.cseptesting.org/index.html) 
