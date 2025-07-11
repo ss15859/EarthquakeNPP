@@ -1,0 +1,180 @@
+{
+  "creationTime": 1562424942260,
+  "expireTime": 1593961200000,
+  "advisoryTimeFrame": "1 Week",
+  "template": "Mainshock",
+  "injectableText": "Due to the very high rate of earthquakes in the earliest part of the sequence, we are not able to count all events.  The counts presented here represent what the number of events that were located by our systems and is somewhat lower than the true number that occurred.",
+  "observations": [
+    {
+      "magnitude": 3.0,
+      "count": 233
+    },
+    {
+      "magnitude": 5.0,
+      "count": 4
+    },
+    {
+      "magnitude": 6.0,
+      "count": 0
+    },
+    {
+      "magnitude": 7.0,
+      "count": 0
+    }
+  ],
+  "model": {
+    "name": "Reasenberg-Jones (1989, 1994) aftershock model (Bayesian Combination)",
+    "reference": "#url",
+    "parameters": {
+      "a": -2.04,
+      "b": 1.0,
+      "magMain": 7.1,
+      "p": 0.94,
+      "c": 0.026,
+      "aSigma": 0.04946696718478138,
+      "pSigma": 0.0
+    }
+  },
+  "forecast": [
+    {
+      "timeStart": 1562425200000,
+      "timeEnd": 1562511600000,
+      "label": "1 Day",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 91,
+          "p95maximum": 161,
+          "probability": 1.0
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 0,
+          "p95maximum": 4,
+          "probability": 0.7057
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 2,
+          "probability": 0.1159
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.01225
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 0.009746
+      }
+    },
+    {
+      "timeStart": 1562425200000,
+      "timeEnd": 1563030000000,
+      "label": "1 Week",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 247,
+          "p95maximum": 406,
+          "probability": 1.0
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 0,
+          "p95maximum": 8,
+          "probability": 0.957
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 2,
+          "probability": 0.2743
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.03161
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 0.02519
+      }
+    },
+    {
+      "timeStart": 1562425200000,
+      "timeEnd": 1565017200000,
+      "label": "1 Month",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 396,
+          "p95maximum": 640,
+          "probability": 1.0
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 2,
+          "p95maximum": 11,
+          "probability": 0.9929
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 3,
+          "probability": 0.3989
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 2,
+          "probability": 0.04976
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 0.03974
+      }
+    },
+    {
+      "timeStart": 1562425200000,
+      "timeEnd": 1593961200000,
+      "label": "1 Year",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 694,
+          "p95maximum": 1106,
+          "probability": 1.0
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 4,
+          "p95maximum": 16,
+          "probability": 0.9998
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 4,
+          "probability": 0.5864
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 2,
+          "probability": 0.08491
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 0.06806
+      }
+    }
+  ]
+}

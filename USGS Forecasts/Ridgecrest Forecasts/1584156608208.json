@@ -1,0 +1,180 @@
+{
+  "creationTime": 1584155993040,
+  "expireTime": 1615694400000,
+  "advisoryTimeFrame": "1 Month",
+  "template": "Mainshock",
+  "injectableText": "This forecast shows that future large earthquakes, as part of the Ridgecrest aftershock sequence, are possible but with a low probability. The San Andreas fault is always a potential source of large earthquakes and the likelihood of an earthquake on the San Andreas has not changed significantly due to the Ridgecrest earthquakes because it is over 60 miles away. If there is a future large earthquake in the Ridgecrest sequence, it could happen in the general vicinity near Ridgecrest and Trona, where most of the aftershocks are taking place, or on one of the nearby, well-known faults that surround the area. These nearby faults include the Garlock fault which runs from the San Andreas fault in the west to Death Valley in the east, the Panamint Valley Fault to the east of Ridgecrest, and the Owens Valley fault to the north. The main swath of aftershocks extends to the Garlock fault southeast of Ridgecrest and we have also observed a separate cluster of aftershocks on the Garlock fault about 20 miles southwest of Ridgecrest. That small cluster, which has produced 3 earthquakes of magnitude 3.0 to 3.2, is located where a similar number of earthquakes occurred in 1981 without any large earthquakes occurring. We are carefully monitoring activity throughout the region and will continue to provide information to help people stay safe and care for themselves and each other.",
+  "observations": [
+    {
+      "magnitude": 3.0,
+      "count": 1059
+    },
+    {
+      "magnitude": 5.0,
+      "count": 3
+    },
+    {
+      "magnitude": 6.0,
+      "count": 0
+    },
+    {
+      "magnitude": 7.0,
+      "count": 0
+    }
+  ],
+  "model": {
+    "name": "Reasenberg-Jones (1989, 1994) aftershock model (Sequence Specific)",
+    "reference": "#url",
+    "parameters": {
+      "a": -2.1,
+      "b": 1.0,
+      "magMain": 7.1,
+      "p": 1.15,
+      "c": 0.00495,
+      "aSigma": 0.0187,
+      "pSigma": 0.0185
+    }
+  },
+  "forecast": [
+    {
+      "timeStart": 1584158400000,
+      "timeEnd": 1584244800000,
+      "label": "1 Day",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 0,
+          "p95maximum": 2,
+          "probability": 0.1605
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.00175
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.0001751
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 1.751e-05
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 1.391e-05
+      }
+    },
+    {
+      "timeStart": 1584158400000,
+      "timeEnd": 1584763200000,
+      "label": "1 Week",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 0,
+          "p95maximum": 4,
+          "probability": 0.6998
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.01202
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.001209
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.0001209
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 9.607e-05
+      }
+    },
+    {
+      "timeStart": 1584158400000,
+      "timeEnd": 1586750400000,
+      "label": "1 Month",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 0,
+          "p95maximum": 10,
+          "probability": 0.992
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.04814
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.004922
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.0004933
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 0.0003919
+      }
+    },
+    {
+      "timeStart": 1584158400000,
+      "timeEnd": 1615694400000,
+      "label": "1 Year",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 24,
+          "p95maximum": 52,
+          "probability": 1.0
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 0,
+          "p95maximum": 3,
+          "probability": 0.3098
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.03645
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.003707
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 0.002946
+      }
+    }
+  ]
+}

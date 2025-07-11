@@ -1,0 +1,180 @@
+{
+  "creationTime": 1578392666567,
+  "expireTime": 1609929000000,
+  "advisoryTimeFrame": "1 Week",
+  "template": "Mainshock",
+  "injectableText": "",
+  "observations": [
+    {
+      "magnitude": 3.0,
+      "count": 4
+    },
+    {
+      "magnitude": 5.0,
+      "count": 1
+    },
+    {
+      "magnitude": 6.0,
+      "count": 0
+    },
+    {
+      "magnitude": 7.0,
+      "count": 0
+    }
+  ],
+  "model": {
+    "name": "Reasenberg-Jones (1989, 1994) aftershock model (Generic)",
+    "reference": "#url",
+    "parameters": {
+      "a": -2.47,
+      "b": 1.0,
+      "magMain": 6.4,
+      "p": 0.88,
+      "c": 0.018,
+      "aSigma": 0.604,
+      "pSigma": 0.0
+    }
+  },
+  "forecast": [
+    {
+      "timeStart": 1578393000000,
+      "timeEnd": 1578479400000,
+      "label": "1 Day",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 0,
+          "p95maximum": 273,
+          "probability": 0.9749
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 0,
+          "p95maximum": 4,
+          "probability": 0.2545
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.04112
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.004502
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 6.4,
+        "probability": 0.01735
+      }
+    },
+    {
+      "timeStart": 1578393000000,
+      "timeEnd": 1578997800000,
+      "label": "1 Week",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 2,
+          "p95maximum": 549,
+          "probability": 0.9917
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 0,
+          "p95maximum": 7,
+          "probability": 0.3839
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 2,
+          "probability": 0.0763
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.008981
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 6.4,
+        "probability": 0.03363
+      }
+    },
+    {
+      "timeStart": 1578393000000,
+      "timeEnd": 1580985000000,
+      "label": "1 Month",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 3,
+          "p95maximum": 810,
+          "probability": 0.996
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 0,
+          "p95maximum": 9,
+          "probability": 0.4657
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 2,
+          "probability": 0.1054
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.01312
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 6.4,
+        "probability": 0.04797
+      }
+    },
+    {
+      "timeStart": 1578393000000,
+      "timeEnd": 1609929000000,
+      "label": "1 Year",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 6,
+          "p95maximum": 1384,
+          "probability": 0.9987
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 0,
+          "p95maximum": 15,
+          "probability": 0.5824
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 3,
+          "probability": 0.1595
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.02194
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 6.4,
+        "probability": 0.07659
+      }
+    }
+  ]
+}

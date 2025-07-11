@@ -1,0 +1,180 @@
+{
+  "creationTime": 1562385785346,
+  "expireTime": 1593922200000,
+  "advisoryTimeFrame": "1 Week",
+  "template": "Mainshock",
+  "injectableText": "This forecast is based purely on experience with past sequences in geothermal areas of California, including in this area.",
+  "observations": [
+    {
+      "magnitude": 3.0,
+      "count": 0
+    },
+    {
+      "magnitude": 5.0,
+      "count": 0
+    },
+    {
+      "magnitude": 6.0,
+      "count": 0
+    },
+    {
+      "magnitude": 7.0,
+      "count": 0
+    }
+  ],
+  "model": {
+    "name": "Reasenberg-Jones (1989, 1994) aftershock model (Generic)",
+    "reference": "#url",
+    "parameters": {
+      "a": -1.79,
+      "b": 1.0,
+      "magMain": 7.1,
+      "p": 0.94,
+      "c": 0.026,
+      "aSigma": 0.2899879302407383,
+      "pSigma": 0.0
+    }
+  },
+  "forecast": [
+    {
+      "timeStart": 1562386200000,
+      "timeEnd": 1562472600000,
+      "label": "1 Day",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 145,
+          "p95maximum": 1998,
+          "probability": 1.0
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 0,
+          "p95maximum": 22,
+          "probability": 0.9676
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 4,
+          "probability": 0.4406
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 2,
+          "probability": 0.0639
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 0.05128
+      }
+    },
+    {
+      "timeStart": 1562386200000,
+      "timeEnd": 1562991000000,
+      "label": "1 Week",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 256,
+          "p95maximum": 3523,
+          "probability": 1.0
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 2,
+          "p95maximum": 37,
+          "probability": 0.9924
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 5,
+          "probability": 0.6115
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 2,
+          "probability": 0.1086
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 0.0878
+      }
+    },
+    {
+      "timeStart": 1562386200000,
+      "timeEnd": 1564978200000,
+      "label": "1 Month",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 350,
+          "p95maximum": 4811,
+          "probability": 1.0
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 3,
+          "p95maximum": 50,
+          "probability": 0.9971
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 7,
+          "probability": 0.7047
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 2,
+          "probability": 0.1439
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 0.117
+      }
+    },
+    {
+      "timeStart": 1562386200000,
+      "timeEnd": 1593922200000,
+      "label": "1 Year",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 532,
+          "p95maximum": 7312,
+          "probability": 1.0
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 4,
+          "p95maximum": 75,
+          "probability": 0.9994
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 9,
+          "probability": 0.8156
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 2,
+          "probability": 0.2067
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 0.1698
+      }
+    }
+  ]
+}

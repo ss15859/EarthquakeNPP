@@ -1,0 +1,180 @@
+{
+  "creationTime": 1562398565062,
+  "expireTime": 1593934800000,
+  "advisoryTimeFrame": "1 Week",
+  "template": "Mainshock",
+  "injectableText": "This forecast is based on preliminary data and may change as the catalog of earthquakes is updated and improved.  It will also be changed as new earthquakes occur and time passes.",
+  "observations": [
+    {
+      "magnitude": 3.0,
+      "count": 136
+    },
+    {
+      "magnitude": 5.0,
+      "count": 4
+    },
+    {
+      "magnitude": 6.0,
+      "count": 0
+    },
+    {
+      "magnitude": 7.0,
+      "count": 0
+    }
+  ],
+  "model": {
+    "name": "Reasenberg-Jones (1989, 1994) aftershock model (Bayesian Combination)",
+    "reference": "#url",
+    "parameters": {
+      "a": -1.96,
+      "b": 1.0,
+      "magMain": 7.1,
+      "p": 0.94,
+      "c": 0.026,
+      "aSigma": 0.06161350524347566,
+      "pSigma": 0.0
+    }
+  },
+  "forecast": [
+    {
+      "timeStart": 1562398800000,
+      "timeEnd": 1562485200000,
+      "label": "1 Day",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 168,
+          "p95maximum": 311,
+          "probability": 1.0
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 0,
+          "p95maximum": 6,
+          "probability": 0.8987
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 2,
+          "probability": 0.2084
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.02315
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 0.01843
+      }
+    },
+    {
+      "timeStart": 1562398800000,
+      "timeEnd": 1563003600000,
+      "label": "1 Week",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 364,
+          "p95maximum": 653,
+          "probability": 1.0
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 0,
+          "p95maximum": 11,
+          "probability": 0.9914
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 3,
+          "probability": 0.3909
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 0,
+          "probability": 0.04857
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 0.03878
+      }
+    },
+    {
+      "timeStart": 1562398800000,
+      "timeEnd": 1564990800000,
+      "label": "1 Month",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 538,
+          "p95maximum": 955,
+          "probability": 1.0
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 3,
+          "p95maximum": 14,
+          "probability": 0.9989
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 3,
+          "probability": 0.5161
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 2,
+          "probability": 0.07047
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 0.0564
+      }
+    },
+    {
+      "timeStart": 1562398800000,
+      "timeEnd": 1593934800000,
+      "label": "1 Year",
+      "bins": [
+        {
+          "magnitude": 3.0,
+          "p95minimum": 877,
+          "p95maximum": 1547,
+          "probability": 1.0
+        },
+        {
+          "magnitude": 5.0,
+          "p95minimum": 6,
+          "p95maximum": 21,
+          "probability": 1.0
+        },
+        {
+          "magnitude": 6.0,
+          "p95minimum": 0,
+          "p95maximum": 4,
+          "probability": 0.6908
+        },
+        {
+          "magnitude": 7.0,
+          "p95minimum": 0,
+          "p95maximum": 2,
+          "probability": 0.1118
+        }
+      ],
+      "aboveMainshockMag": {
+        "magnitude": 7.1,
+        "probability": 0.08994
+      }
+    }
+  ]
+}
