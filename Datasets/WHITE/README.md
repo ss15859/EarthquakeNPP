@@ -38,7 +38,7 @@ The dataset can be downloaded from https://data.mendeley.com/datasets/7ywkdx7c62
 
 ```python
 # Define the URL and the local filename
-url="https://prod-dcd-datasets-cache-zipfiles.s3.eu-west-1.amazonaws.com/7ywkdx7c62-1.zip"
+url="https://data.mendeley.com/public-api/zip/7ywkdx7c62/download/1"
 local_filename = "WHITE.zip"
 extract_path = "./raw"
 
@@ -259,6 +259,59 @@ print('Removed',len_trunc_t-len_trunc_m, 'events below Mcut')
     Removed 104549 events below Mcut
 
 
+## Avoiding duplicated Locations
+
+
+```python
+# # ============================Jittering Location of events=============================================
+# set the random seed 
+np.random.seed(42)
+
+df_modified = catalog.copy()
+
+# set the jettering range 
+spatial_jitter_range = 0.005 # = 0.5km
+time_jitter_range = 0.1/86400  
+
+# deal with spatial duplication 
+while True:
+    duplicates = df_modified[df_modified.duplicated(subset=['longitude', 'latitude'], keep=False)]
+
+    if duplicates.empty:
+        print("no duplicate points found, finished!")
+        break
+    
+    for idx in duplicates.index:
+        df_modified.loc[idx, 'longitude'] += np.random.uniform(-spatial_jitter_range/2, spatial_jitter_range/2)
+        df_modified.loc[idx, 'latitude'] += np.random.uniform(-spatial_jitter_range/2, spatial_jitter_range/2)
+
+    print(f"there are {len(duplicates)} duplicate points, continue adding noise...")
+
+
+
+while True:
+    duplicates = df_modified[df_modified.duplicated(subset=['time'], keep=False)]
+
+    if duplicates.empty:
+        print("no duplicate time found, finished!")
+        break
+    
+    for idx in duplicates.index:
+        time_jitter = np.random.uniform(-time_jitter_range/2, time_jitter_range/2)
+        df_modified.loc[idx, 'time'] += pd.to_timedelta(time_jitter, unit='s')
+
+    print(f"there are {len(duplicates)} duplicate time, continue adding noise...")
+
+df_modified.sort_values(by='time', inplace=True)
+
+catalog = df_modified.copy()
+```
+
+    there are 2594 duplicate points, continue adding noise...
+    no duplicate points found, finished!
+    no duplicate time found, finished!
+
+
 ## The Processed Catalog
 
 Let's now plot the truncated catalog, including the training, validation and testing windows. We can also label some of the major events that occurred.
@@ -360,7 +413,7 @@ plt.show()
 
 
     
-![png](README_files/README_23_0.png)
+![png](README_files/README_25_0.png)
     
 
 

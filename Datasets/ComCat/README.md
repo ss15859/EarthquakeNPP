@@ -107,7 +107,7 @@ raw_catalog.rename(columns={'index': 'id'}, inplace=True)
 print('the raw catalog has', len(raw_catalog),'events')
 ```
 
-    the raw catalog has 301293 events
+    the raw catalog has 301307 events
 
 
 ## Visualising the Catalog
@@ -246,8 +246,8 @@ len_trunc_t = len(catalog)
 print('Removed',len_trunc_x-len_trunc_t, 'events outside timewindow')
 ```
 
-    Removed 22357 events outside polygon
-    Removed 30022 events outside timewindow
+    Removed 22352 events outside polygon
+    Removed 30024 events outside timewindow
 
 
 We can now truncate the catalog above a magnitude threshold.
@@ -303,7 +303,61 @@ len_trunc_m = len(catalog)
 print('Removed',len_trunc_t-len_trunc_m, 'events below Mcut')
 ```
 
-    Removed 156654 events below Mcut
+    Removed 156668 events below Mcut
+
+
+## Avoiding duplicated Locations
+
+
+```python
+# # ============================Jittering Location of events=============================================
+# set the random seed 
+np.random.seed(42)
+
+df_modified = catalog.copy()
+
+# set the jettering range 
+spatial_jitter_range = 0.005 # = 0.5km
+time_jitter_range = 0.1/86400  
+
+# deal with spatial duplication 
+while True:
+    duplicates = df_modified[df_modified.duplicated(subset=['longitude', 'latitude'], keep=False)]
+
+    if duplicates.empty:
+        print("no duplicate points found, finished!")
+        break
+    
+    for idx in duplicates.index:
+        df_modified.loc[idx, 'longitude'] += np.random.uniform(-spatial_jitter_range/2, spatial_jitter_range/2)
+        df_modified.loc[idx, 'latitude'] += np.random.uniform(-spatial_jitter_range/2, spatial_jitter_range/2)
+
+    print(f"there are {len(duplicates)} duplicate points, continue adding noise...")
+
+
+
+while True:
+    duplicates = df_modified[df_modified.duplicated(subset=['time'], keep=False)]
+
+    if duplicates.empty:
+        print("no duplicate time found, finished!")
+        break
+    
+    for idx in duplicates.index:
+        time_jitter = np.random.uniform(-time_jitter_range/2, time_jitter_range/2)
+        df_modified.loc[idx, 'time'] += pd.to_timedelta(time_jitter, unit='s')
+
+    print(f"there are {len(duplicates)} duplicate time, continue adding noise...")
+
+df_modified.sort_values(by='time', inplace=True)
+
+catalog = df_modified.copy()
+```
+
+    there are 2071 duplicate points, continue adding noise...
+    no duplicate points found, finished!
+    there are 10 duplicate time, continue adding noise...
+    no duplicate time found, finished!
 
 
 ## The Processed Catalog
@@ -394,7 +448,7 @@ plt.show()
 
 
     
-![png](README_files/README_28_0.png)
+![png](README_files/README_30_0.png)
     
 
 

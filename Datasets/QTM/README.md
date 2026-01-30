@@ -323,6 +323,115 @@ print('Removed',len_SaltonSea_trunc_t-len(SaltonSea_catalog), 'events below Mcut
     Removed 140282 events below Mcut from SaltonSea catalog
 
 
+## Avoiding duplicated Locations
+
+### SanJac
+
+
+```python
+# # ============================Jittering Location of events=============================================
+# set the random seed 
+np.random.seed(42)
+
+df_modified = SanJac_catalog.copy()
+
+# set the jettering range 
+spatial_jitter_range = 0.005 # = 0.5km
+time_jitter_range = 0.1/86400  
+
+# deal with spatial duplication 
+while True:
+    duplicates = df_modified[df_modified.duplicated(subset=['longitude', 'latitude'], keep=False)]
+
+    if duplicates.empty:
+        print("no duplicate points found, finished!")
+        break
+    
+    for idx in duplicates.index:
+        df_modified.loc[idx, 'longitude'] += np.random.uniform(-spatial_jitter_range/2, spatial_jitter_range/2)
+        df_modified.loc[idx, 'latitude'] += np.random.uniform(-spatial_jitter_range/2, spatial_jitter_range/2)
+
+    print(f"there are {len(duplicates)} duplicate points, continue adding noise...")
+
+
+
+while True:
+    duplicates = df_modified[df_modified.duplicated(subset=['time'], keep=False)]
+
+    if duplicates.empty:
+        print("no duplicate time found, finished!")
+        break
+    
+    for idx in duplicates.index:
+        time_jitter = np.random.uniform(-time_jitter_range/2, time_jitter_range/2)
+        df_modified.loc[idx, 'time'] += pd.to_timedelta(time_jitter, unit='s')
+
+    print(f"there are {len(duplicates)} duplicate time, continue adding noise...")
+
+df_modified.sort_values(by='time', inplace=True)
+
+SanJac_catalog = df_modified.copy()
+```
+
+    there are 1935 duplicate points, continue adding noise...
+    no duplicate points found, finished!
+    no duplicate time found, finished!
+
+
+### SaltonSea
+
+
+```python
+# # ============================Jittering Location of events=============================================
+# set the random seed 
+np.random.seed(42)
+
+df_modified = SaltonSea_catalog.copy()
+
+# set the jettering range 
+spatial_jitter_range = 0.005 # = 0.5km
+time_jitter_range = 0.1/86400  
+
+# deal with spatial duplication 
+while True:
+    duplicates = df_modified[df_modified.duplicated(subset=['longitude', 'latitude'], keep=False)]
+
+    if duplicates.empty:
+        print("no duplicate points found, finished!")
+        break
+    
+    for idx in duplicates.index:
+        df_modified.loc[idx, 'longitude'] += np.random.uniform(-spatial_jitter_range/2, spatial_jitter_range/2)
+        df_modified.loc[idx, 'latitude'] += np.random.uniform(-spatial_jitter_range/2, spatial_jitter_range/2)
+
+    print(f"there are {len(duplicates)} duplicate points, continue adding noise...")
+
+
+
+while True:
+    duplicates = df_modified[df_modified.duplicated(subset=['time'], keep=False)]
+
+    if duplicates.empty:
+        print("no duplicate time found, finished!")
+        break
+    
+    for idx in duplicates.index:
+        time_jitter = np.random.uniform(-time_jitter_range/2, time_jitter_range/2)
+        df_modified.loc[idx, 'time'] += pd.to_timedelta(time_jitter, unit='s')
+
+    print(f"there are {len(duplicates)} duplicate time, continue adding noise...")
+
+df_modified.sort_values(by='time', inplace=True)
+
+SaltonSea_catalog = df_modified.copy()
+```
+
+    there are 4792 duplicate points, continue adding noise...
+    no duplicate points found, finished!
+    there are 2 duplicate time, continue adding noise...
+    no duplicate time found, finished!
+
+
 ## The Processed Catalogs
 
 Let's now plot the truncated catalogs, including the training, validation and testing windows.
@@ -389,7 +498,7 @@ plt.show()
 
 
     
-![png](README_files/README_27_0.png)
+![png](README_files/README_32_0.png)
     
 
 
@@ -436,7 +545,7 @@ plt.show()
 
 
     
-![png](README_files/README_29_0.png)
+![png](README_files/README_34_0.png)
     
 
 
