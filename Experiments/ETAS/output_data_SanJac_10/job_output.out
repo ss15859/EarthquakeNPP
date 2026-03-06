@@ -1,0 +1,37 @@
+cpu-bind=MASK - bp1-compute091, task  0  0 [11659]: mask 0xf00000f000 set
+27-02-26 13:16:01 : INFO     : etas.inversion  - INITIALIZING...
+27-02-26 13:16:01 : INFO     : etas.inversion  -   model is named NoName ETAS Model, has ID 0
+27-02-26 13:16:01 : INFO     : etas.inversion  -   Time Window: 
+      2008-01-01 00:00:00 (aux start)
+      2009-01-01 00:00:00 (start)
+      2016-01-01 00:00:00 (end).
+27-02-26 13:16:01 : INFO     : etas.inversion  -   free_productivity: False, free_background: False
+27-02-26 13:16:01 : INFO     : etas.inversion  - PREPARING NoName ETAS Model
+27-02-26 13:16:01 : INFO     : etas.inversion  -   filtering catalog...
+27-02-26 13:16:01 : INFO     : etas.inversion  -   21291 out of 21291 events are within time window.
+27-02-26 13:16:01 : INFO     : etas.inversion  -   Coordinates of region: [array([  33., -117.]), array([  33., -116.]), array([  34., -116.]), array([  34., -117.])]
+27-02-26 13:16:01 : INFO     : etas.inversion  - Region has 10306.063185775638 square km
+27-02-26 13:16:01 : INFO     : etas.inversion  - 21288 events lie within target region.
+27-02-26 13:16:01 : INFO     : etas.inversion  - 21288 events are above completeness.
+Precomputing Intgral
+Done
++----------+---Poisson--+------------+
++---------+----------+----------+
+|     nll |      sll |      tll |
++=========+==========+==========+
+| 8.44657 | -9.24049 | 0.793917 |
++---------+----------+----------+
+/user/work/ss15859/miniforge3/envs/earthquakeNPP/lib/python3.11/site-packages/etas/evaluation.py:388: RuntimeWarning: divide by zero encountered in log
+  self.LL= np.log(self.lambd) - self.int_lambd
+/user/work/ss15859/miniforge3/envs/earthquakeNPP/lib/python3.11/site-packages/etas/evaluation.py:389: RuntimeWarning: divide by zero encountered in log
+  self.TLL = np.log(self.lambd_star) - self.int_lambd
+/user/work/ss15859/miniforge3/envs/earthquakeNPP/lib/python3.11/site-packages/etas/evaluation.py:390: RuntimeWarning: invalid value encountered in subtract
+  self.SLL = self.LL - self.TLL
+27-02-26 13:17:07 : INFO     : etas.inversion  -   Data will be stored in output_data_SanJac_10/
+area:  10306.063185775638
++----------+----ETAS----+------------+
++---------+----------+---------+
+|     nll |      sll |     tll |
++=========+==========+=========+
+| 4.26559 | -5.39812 | 1.13253 |
++---------+----------+---------+

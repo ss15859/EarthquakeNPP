@@ -1,0 +1,508 @@
+cpu-bind=MASK - bp1-compute058, task  0  0 [323042]: mask 0xf00000f set
+02-03-26 14:56:56 : INFO     : etas.inversion  - INITIALIZING...
+02-03-26 14:56:56 : INFO     : etas.inversion  -   model is named NoName ETAS Model, has ID 0
+02-03-26 14:56:57 : INFO     : etas.inversion  -   Time Window: 
+      1981-01-01 00:00:00 (aux start)
+      1985-01-01 00:00:00 (start)
+      2014-01-01 00:00:00 (end).
+02-03-26 14:56:57 : INFO     : etas.inversion  -   free_productivity: False, free_background: False
+02-03-26 14:56:57 : INFO     : etas.inversion  - PREPARING NoName ETAS Model
+02-03-26 14:56:57 : INFO     : etas.inversion  -   filtering catalog...
+02-03-26 14:56:57 : INFO     : etas.inversion  -   117290 out of 130424 events are within time window.
+02-03-26 14:56:57 : INFO     : etas.inversion  -   Coordinates of region: [array([  32., -122.]), array([  32., -114.]), array([  37., -114.]), array([  37., -122.]), array([  32., -122.])]
+02-03-26 14:56:57 : INFO     : etas.inversion  - Region has 406963.70523318584 square km
+02-03-26 14:56:57 : INFO     : etas.inversion  - 117288 events lie within target region.
+02-03-26 14:56:57 : DEBUG    : etas.inversion  -   Checking for rounding issues...
+02-03-26 14:56:57 : DEBUG    : etas.inversion  -   No rounding issues found.
+02-03-26 14:56:57 : INFO     : etas.inversion  - 117288 events are above completeness.
+02-03-26 14:56:57 : INFO     : etas.inversion  -   using input initial values for theta
+02-03-26 14:56:57 : INFO     : etas.inversion  -   calculating distances...
+02-03-26 14:56:57 : INFO     : etas.inversion  -     beta is 2.0870640327310817
+02-03-26 14:56:57 : INFO     : etas.inversion  -   number of sources: 117288
+02-03-26 14:56:57 : INFO     : etas.inversion  -   number of targets: 104916
+02-03-26 14:56:57 : INFO     : etas.inversion  -     assuming 2D lat/long coordinates.
+02-03-26 15:35:07 : DEBUG    : etas.inversion  -   took 0:38:09.363211 to prepare the data
+02-03-26 15:35:09 : INFO     : etas.inversion  -   preparing source and target events..
+02-03-26 15:35:09 : INFO     : etas.inversion  -   beta of primary catalog is 2.0870640327310817
+02-03-26 15:35:09 : INFO     : etas.inversion  - START INVERSION
+02-03-26 15:35:09 : INFO     : etas.inversion  -   iteration 0
+02-03-26 15:35:09 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 15:35:09 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 15:35:20 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 15:35:46 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 15:35:48 : DEBUG    : etas.inversion  -     expectation step took 0:00:38.924837
+02-03-26 15:35:48 : DEBUG    : etas.inversion  -       n_hat: 6034.806618297404
+02-03-26 15:35:48 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 15:35:48 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 16:05:56 : DEBUG    : etas.inversion  -     optimization step took 0:30:08.221900
+02-03-26 16:05:56 : INFO     : etas.inversion  -     new parameters:
+02-03-26 16:05:56 : INFO     : etas.inversion  - {   'a': 1.7811999564337377,
+    'gamma': 1.182778608410953,
+    'log10_c': -2.6502682913041546,
+    'log10_d': -0.7834942939263964,
+    'log10_iota': None,
+    'log10_k0': -2.6303597658577855,
+    'log10_mu': -5.85387029285115,
+    'log10_tau': 3.4758370781857035,
+    'omega': -0.05368908694278936,
+    'rho': 0.7050078810337622}
+02-03-26 16:05:56 : INFO     : etas.inversion  -     difference to previous: 0.5398853810328513
+02-03-26 16:05:56 : DEBUG    : etas.inversion  -     branching ratio: 1.072786762345817
+02-03-26 16:05:56 : INFO     : etas.inversion  -   iteration 1
+02-03-26 16:05:56 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 16:05:56 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 16:06:07 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 16:06:31 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 16:06:34 : DEBUG    : etas.inversion  -     expectation step took 0:00:37.571636
+02-03-26 16:06:34 : DEBUG    : etas.inversion  -       n_hat: 5803.034399361484
+02-03-26 16:06:34 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 16:06:34 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 16:24:33 : DEBUG    : etas.inversion  -     optimization step took 0:17:59.354319
+02-03-26 16:24:33 : INFO     : etas.inversion  -     new parameters:
+02-03-26 16:24:33 : INFO     : etas.inversion  - {   'a': 1.7582247378045912,
+    'gamma': 1.104261105149027,
+    'log10_c': -2.702864359055787,
+    'log10_d': -0.7485387642180784,
+    'log10_iota': None,
+    'log10_k0': -2.618346339996331,
+    'log10_mu': -5.870878505812291,
+    'log10_tau': 3.4781961597973647,
+    'omega': -0.0606967806902855,
+    'rho': 0.725850144028908}
+02-03-26 16:24:33 : INFO     : etas.inversion  -     difference to previous: 0.24827499652792134
+02-03-26 16:24:33 : DEBUG    : etas.inversion  -     branching ratio: 0.981371186094327
+02-03-26 16:24:33 : INFO     : etas.inversion  -   iteration 2
+02-03-26 16:24:33 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 16:24:33 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 16:24:46 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 16:25:11 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 16:25:13 : DEBUG    : etas.inversion  -     expectation step took 0:00:40.161049
+02-03-26 16:25:13 : DEBUG    : etas.inversion  -       n_hat: 5712.158758907591
+02-03-26 16:25:13 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 16:25:13 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 16:43:03 : DEBUG    : etas.inversion  -     optimization step took 0:17:49.179795
+02-03-26 16:43:03 : INFO     : etas.inversion  -     new parameters:
+02-03-26 16:43:03 : INFO     : etas.inversion  - {   'a': 1.733659420348531,
+    'gamma': 1.0490048982990936,
+    'log10_c': -2.717213671578351,
+    'log10_d': -0.7290280678901019,
+    'log10_iota': None,
+    'log10_k0': -2.6096801614409553,
+    'log10_mu': -5.877733381456084,
+    'log10_tau': 3.4837928841190733,
+    'omega': -0.06234131824557687,
+    'rho': 0.7335201825401061}
+02-03-26 16:43:03 : INFO     : etas.inversion  -     difference to previous: 0.14411388774390055
+02-03-26 16:43:03 : DEBUG    : etas.inversion  -     branching ratio: 0.9850254858788835
+02-03-26 16:43:03 : INFO     : etas.inversion  -   iteration 3
+02-03-26 16:43:03 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 16:43:03 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 16:43:13 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 16:43:37 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 16:43:40 : DEBUG    : etas.inversion  -     expectation step took 0:00:37.173480
+02-03-26 16:43:40 : DEBUG    : etas.inversion  -       n_hat: 5682.555703579479
+02-03-26 16:43:40 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 16:43:40 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 17:00:26 : DEBUG    : etas.inversion  -     optimization step took 0:16:46.267729
+02-03-26 17:00:26 : INFO     : etas.inversion  -     new parameters:
+02-03-26 17:00:26 : INFO     : etas.inversion  - {   'a': 1.7118919070484653,
+    'gamma': 1.0092748838727077,
+    'log10_c': -2.719860907288223,
+    'log10_d': -0.717406255173406,
+    'log10_iota': None,
+    'log10_k0': -2.603799993500248,
+    'log10_mu': -5.879989949190784,
+    'log10_tau': 3.4880532832621,
+    'omega': -0.06268187163676134,
+    'rho': 0.7357333161775768}
+02-03-26 17:00:26 : INFO     : etas.inversion  -     difference to previous: 0.09071739800010895
+02-03-26 17:00:26 : DEBUG    : etas.inversion  -     branching ratio: 0.9870163968350922
+02-03-26 17:00:26 : INFO     : etas.inversion  -   iteration 4
+02-03-26 17:00:26 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 17:00:26 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 17:00:37 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 17:01:01 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 17:01:03 : DEBUG    : etas.inversion  -     expectation step took 0:00:37.271810
+02-03-26 17:01:03 : DEBUG    : etas.inversion  -       n_hat: 5675.412597547641
+02-03-26 17:01:03 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 17:01:03 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 17:16:27 : DEBUG    : etas.inversion  -     optimization step took 0:15:23.553105
+02-03-26 17:16:27 : INFO     : etas.inversion  -     new parameters:
+02-03-26 17:16:27 : INFO     : etas.inversion  - {   'a': 1.6941428002610166,
+    'gamma': 0.9804780547663463,
+    'log10_c': -2.7195200647605837,
+    'log10_d': -0.7101007918784051,
+    'log10_iota': None,
+    'log10_k0': -2.5997701200617844,
+    'log10_mu': -5.880536210962261,
+    'log10_tau': 3.490666385450396,
+    'omega': -0.06270227691605545,
+    'rho': 0.735866001132931}
+02-03-26 17:16:27 : INFO     : etas.inversion  -     difference to previous: 0.061534569349335405
+02-03-26 17:16:27 : DEBUG    : etas.inversion  -     branching ratio: 0.9880603586882609
+02-03-26 17:16:27 : INFO     : etas.inversion  -   iteration 5
+02-03-26 17:16:27 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 17:16:27 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 17:16:38 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 17:17:04 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 17:17:07 : DEBUG    : etas.inversion  -     expectation step took 0:00:39.896131
+02-03-26 17:17:07 : DEBUG    : etas.inversion  -       n_hat: 5675.9661505753265
+02-03-26 17:17:07 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 17:17:07 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 17:42:48 : DEBUG    : etas.inversion  -     optimization step took 0:25:40.974723
+02-03-26 17:42:48 : INFO     : etas.inversion  -     new parameters:
+02-03-26 17:42:48 : INFO     : etas.inversion  - {   'a': 1.6802738825962578,
+    'gamma': 0.9595844902355377,
+    'log10_c': -2.7186250796955167,
+    'log10_d': -0.705309740078383,
+    'log10_iota': None,
+    'log10_k0': -2.5969384421628705,
+    'log10_mu': -5.880493853988559,
+    'log10_tau': 3.492106878382661,
+    'omega': -0.06265961811466297,
+    'rho': 0.7353101097049191}
+02-03-26 17:42:48 : INFO     : etas.inversion  -     difference to previous: 0.04536159709494164
+02-03-26 17:42:48 : DEBUG    : etas.inversion  -     branching ratio: 0.9886079936030827
+02-03-26 17:42:48 : INFO     : etas.inversion  -   iteration 6
+02-03-26 17:42:48 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 17:42:48 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 17:42:59 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 17:43:22 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 17:43:24 : DEBUG    : etas.inversion  -     expectation step took 0:00:36.538185
+02-03-26 17:43:24 : DEBUG    : etas.inversion  -       n_hat: 5678.818809539243
+02-03-26 17:43:24 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 17:43:24 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 18:10:41 : DEBUG    : etas.inversion  -     optimization step took 0:27:16.591296
+02-03-26 18:10:41 : INFO     : etas.inversion  -     new parameters:
+02-03-26 18:10:41 : INFO     : etas.inversion  - {   'a': 1.6696740494165447,
+    'gamma': 0.9443998725582184,
+    'log10_c': -2.7178731653668424,
+    'log10_d': -0.7020422522147689,
+    'log10_iota': None,
+    'log10_k0': -2.594889066335393,
+    'log10_mu': -5.880275638658688,
+    'log10_tau': 3.4928851896425934,
+    'omega': -0.06261299499314112,
+    'rho': 0.7346202001925453}
+02-03-26 18:10:41 : INFO     : etas.inversion  -     difference to previous: 0.03358628810049784
+02-03-26 18:10:41 : DEBUG    : etas.inversion  -     branching ratio: 0.9888849784109439
+02-03-26 18:10:41 : INFO     : etas.inversion  -   iteration 7
+02-03-26 18:10:41 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 18:10:41 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 18:10:53 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 18:11:19 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 18:11:21 : DEBUG    : etas.inversion  -     expectation step took 0:00:40.331137
+02-03-26 18:11:21 : DEBUG    : etas.inversion  -       n_hat: 5681.971677118404
+02-03-26 18:11:21 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 18:11:21 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 18:30:02 : DEBUG    : etas.inversion  -     optimization step took 0:18:40.921882
+02-03-26 18:30:02 : INFO     : etas.inversion  -     new parameters:
+02-03-26 18:30:02 : INFO     : etas.inversion  - {   'a': 1.6616931369294905,
+    'gamma': 0.933391110964364,
+    'log10_c': -2.7172935600124557,
+    'log10_d': -0.6997619392881783,
+    'log10_iota': None,
+    'log10_k0': -2.593384000884163,
+    'log10_mu': -5.880034586237457,
+    'log10_tau': 3.493281551312169,
+    'omega': -0.06257902922375046,
+    'rho': 0.73399089052521}
+02-03-26 18:30:02 : INFO     : etas.inversion  -     difference to previous: 0.024655347340648254
+02-03-26 18:30:02 : DEBUG    : etas.inversion  -     branching ratio: 0.9890244987333777
+02-03-26 18:30:02 : INFO     : etas.inversion  -   iteration 8
+02-03-26 18:30:02 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 18:30:02 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 18:30:14 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 18:30:38 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 18:30:41 : DEBUG    : etas.inversion  -     expectation step took 0:00:38.544309
+02-03-26 18:30:41 : DEBUG    : etas.inversion  -       n_hat: 5684.750398477749
+02-03-26 18:30:41 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 18:30:41 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 18:46:50 : DEBUG    : etas.inversion  -     optimization step took 0:16:08.779127
+02-03-26 18:46:50 : INFO     : etas.inversion  -     new parameters:
+02-03-26 18:46:50 : INFO     : etas.inversion  - {   'a': 1.6557484957684738,
+    'gamma': 0.9254028878328963,
+    'log10_c': -2.7168753966905914,
+    'log10_d': -0.6981347855666966,
+    'log10_iota': None,
+    'log10_k0': -2.5922573306237493,
+    'log10_mu': -5.879822250021418,
+    'log10_tau': 3.493479775458404,
+    'omega': -0.06255088376802047,
+    'rho': 0.7334860006668446}
+02-03-26 18:46:50 : INFO     : etas.inversion  -     difference to previous: 0.018048447272613843
+02-03-26 18:46:50 : DEBUG    : etas.inversion  -     branching ratio: 0.9890801754847529
+02-03-26 18:46:50 : INFO     : etas.inversion  -   iteration 9
+02-03-26 18:46:50 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 18:46:50 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 18:47:01 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 18:47:25 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 18:47:28 : DEBUG    : etas.inversion  -     expectation step took 0:00:38.305467
+02-03-26 18:47:28 : DEBUG    : etas.inversion  -       n_hat: 5687.033249661672
+02-03-26 18:47:28 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 18:47:28 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 19:09:21 : DEBUG    : etas.inversion  -     optimization step took 0:21:52.962838
+02-03-26 19:09:21 : INFO     : etas.inversion  -     new parameters:
+02-03-26 19:09:21 : INFO     : etas.inversion  - {   'a': 1.651346083657155,
+    'gamma': 0.9196156297745418,
+    'log10_c': -2.7165644857427123,
+    'log10_d': -0.6969480303761101,
+    'log10_iota': None,
+    'log10_k0': -2.5914017076508458,
+    'log10_mu': -5.879647883410835,
+    'log10_tau': 3.4935839102747175,
+    'omega': -0.06253017851945145,
+    'rho': 0.7331083738022823}
+02-03-26 19:09:21 : INFO     : etas.inversion  -     difference to previous: 0.013219792821069568
+02-03-26 19:09:21 : DEBUG    : etas.inversion  -     branching ratio: 0.9891059466794383
+02-03-26 19:09:21 : INFO     : etas.inversion  -   iteration 10
+02-03-26 19:09:21 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 19:09:21 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 19:09:33 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 19:09:59 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 19:10:01 : DEBUG    : etas.inversion  -     expectation step took 0:00:40.527043
+02-03-26 19:10:01 : DEBUG    : etas.inversion  -       n_hat: 5688.803430244672
+02-03-26 19:10:01 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 19:10:01 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 19:20:18 : DEBUG    : etas.inversion  -     optimization step took 0:10:16.557271
+02-03-26 19:20:18 : INFO     : etas.inversion  -     new parameters:
+02-03-26 19:20:18 : INFO     : etas.inversion  - {   'a': 1.6480686591500995,
+    'gamma': 0.915406392791161,
+    'log10_c': -2.716530769164018,
+    'log10_d': -0.6960951046718205,
+    'log10_iota': None,
+    'log10_k0': -2.590779305427686,
+    'log10_mu': -5.879512723301384,
+    'log10_tau': 3.493608139991237,
+    'omega': -0.06252692052322692,
+    'rho': 0.7328117888676584}
+02-03-26 19:20:18 : INFO     : etas.inversion  -     difference to previous: 0.009454938753398923
+02-03-26 19:20:18 : DEBUG    : etas.inversion  -     branching ratio: 0.9891098008723094
+02-03-26 19:20:18 : INFO     : etas.inversion  -   iteration 11
+02-03-26 19:20:18 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 19:20:18 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 19:20:29 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 19:20:54 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 19:20:57 : DEBUG    : etas.inversion  -     expectation step took 0:00:38.709377
+02-03-26 19:20:57 : DEBUG    : etas.inversion  -       n_hat: 5690.105739830909
+02-03-26 19:20:57 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 19:20:57 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 19:29:05 : DEBUG    : etas.inversion  -     optimization step took 0:08:08.255149
+02-03-26 19:29:05 : INFO     : etas.inversion  -     new parameters:
+02-03-26 19:29:05 : INFO     : etas.inversion  - {   'a': 1.6456403655029177,
+    'gamma': 0.9123387233297426,
+    'log10_c': -2.716420540998368,
+    'log10_d': -0.6954650702485466,
+    'log10_iota': None,
+    'log10_k0': -2.590298583306896,
+    'log10_mu': -5.87941331379542,
+    'log10_tau': 3.4936671547922282,
+    'omega': -0.06251513076532422,
+    'rho': 0.7325945964813101}
+02-03-26 19:29:05 : INFO     : etas.inversion  -     difference to previous: 0.007104354269520247
+02-03-26 19:29:05 : DEBUG    : etas.inversion  -     branching ratio: 0.9891014863509386
+02-03-26 19:29:05 : INFO     : etas.inversion  -   iteration 12
+02-03-26 19:29:05 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 19:29:05 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 19:29:16 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 19:29:42 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 19:29:45 : DEBUG    : etas.inversion  -     expectation step took 0:00:39.670452
+02-03-26 19:29:45 : DEBUG    : etas.inversion  -       n_hat: 5691.024262731365
+02-03-26 19:29:45 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 19:29:45 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 19:37:22 : DEBUG    : etas.inversion  -     optimization step took 0:07:36.918380
+02-03-26 19:37:22 : INFO     : etas.inversion  -     new parameters:
+02-03-26 19:37:22 : INFO     : etas.inversion  - {   'a': 1.6438630727378412,
+    'gamma': 0.910114411534308,
+    'log10_c': -2.716259834568675,
+    'log10_d': -0.6950008659782109,
+    'log10_iota': None,
+    'log10_k0': -2.5899297170803073,
+    'log10_mu': -5.879343213651069,
+    'log10_tau': 3.4936607040544954,
+    'omega': -0.062505519398666,
+    'rho': 0.7324390260216112}
+02-03-26 19:37:22 : INFO     : etas.inversion  -     difference to previous: 0.005237114195570158
+02-03-26 19:37:22 : DEBUG    : etas.inversion  -     branching ratio: 0.9890932777738359
+02-03-26 19:37:22 : INFO     : etas.inversion  -   iteration 13
+02-03-26 19:37:22 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 19:37:22 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 19:37:33 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 19:37:58 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 19:38:01 : DEBUG    : etas.inversion  -     expectation step took 0:00:39.078911
+02-03-26 19:38:01 : DEBUG    : etas.inversion  -       n_hat: 5691.754997365401
+02-03-26 19:38:01 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 19:38:01 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 19:50:36 : DEBUG    : etas.inversion  -     optimization step took 0:12:35.152678
+02-03-26 19:50:36 : INFO     : etas.inversion  -     new parameters:
+02-03-26 19:50:36 : INFO     : etas.inversion  - {   'a': 1.642572096121342,
+    'gamma': 0.9084977798395742,
+    'log10_c': -2.7161821762613987,
+    'log10_d': -0.6946378155477508,
+    'log10_iota': None,
+    'log10_k0': -2.589642753603437,
+    'log10_mu': -5.879287453276123,
+    'log10_tau': 3.493650289832815,
+    'omega': -0.06250161135669717,
+    'rho': 0.7323493657972489}
+02-03-26 19:50:36 : INFO     : etas.inversion  -     difference to previous: 0.003795023388797239
+02-03-26 19:50:36 : DEBUG    : etas.inversion  -     branching ratio: 0.9890827291329113
+02-03-26 19:50:36 : INFO     : etas.inversion  -   iteration 14
+02-03-26 19:50:36 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 19:50:36 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 19:50:46 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 19:51:08 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 19:51:10 : DEBUG    : etas.inversion  -     expectation step took 0:00:34.661161
+02-03-26 19:51:10 : DEBUG    : etas.inversion  -       n_hat: 5692.32781624781
+02-03-26 19:51:10 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 19:51:10 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 20:03:18 : DEBUG    : etas.inversion  -     optimization step took 0:12:07.862491
+02-03-26 20:03:18 : INFO     : etas.inversion  -     new parameters:
+02-03-26 20:03:18 : INFO     : etas.inversion  - {   'a': 1.64163458231666,
+    'gamma': 0.9073511589538966,
+    'log10_c': -2.7161066967450456,
+    'log10_d': -0.6943864969422674,
+    'log10_iota': None,
+    'log10_k0': -2.589438807496888,
+    'log10_mu': -5.879243748028358,
+    'log10_tau': 3.4936643847064173,
+    'omega': -0.06249624816610157,
+    'rho': 0.7322701388517874}
+02-03-26 20:03:18 : INFO     : etas.inversion  -     difference to previous: 0.002757269176169558
+02-03-26 20:03:18 : DEBUG    : etas.inversion  -     branching ratio: 0.9890700403039389
+02-03-26 20:03:18 : INFO     : etas.inversion  -   iteration 15
+02-03-26 20:03:18 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 20:03:18 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 20:03:30 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 20:03:55 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 20:03:58 : DEBUG    : etas.inversion  -     expectation step took 0:00:39.337159
+02-03-26 20:03:58 : DEBUG    : etas.inversion  -       n_hat: 5692.692437171869
+02-03-26 20:03:58 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 20:03:58 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 20:11:25 : DEBUG    : etas.inversion  -     optimization step took 0:07:27.584280
+02-03-26 20:11:25 : INFO     : etas.inversion  -     new parameters:
+02-03-26 20:11:25 : INFO     : etas.inversion  - {   'a': 1.6409662155359555,
+    'gamma': 0.9065190676523511,
+    'log10_c': -2.7160421125128162,
+    'log10_d': -0.6941823157742482,
+    'log10_iota': None,
+    'log10_k0': -2.589270697129519,
+    'log10_mu': -5.879215930272776,
+    'log10_tau': 3.493650326645258,
+    'omega': -0.06249336105712299,
+    'rho': 0.7322329483071202}
+02-03-26 20:11:25 : INFO     : etas.inversion  -     difference to previous: 0.0020192873202551573
+02-03-26 20:11:25 : DEBUG    : etas.inversion  -     branching ratio: 0.9890606120029751
+02-03-26 20:11:25 : INFO     : etas.inversion  -   iteration 16
+02-03-26 20:11:25 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 20:11:25 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 20:11:37 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 20:12:01 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 20:12:04 : DEBUG    : etas.inversion  -     expectation step took 0:00:38.676001
+02-03-26 20:12:04 : DEBUG    : etas.inversion  -       n_hat: 5692.982582302515
+02-03-26 20:12:04 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 20:12:04 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 20:21:59 : DEBUG    : etas.inversion  -     optimization step took 0:09:55.450034
+02-03-26 20:21:59 : INFO     : etas.inversion  -     new parameters:
+02-03-26 20:21:59 : INFO     : etas.inversion  - {   'a': 1.6404661575993895,
+    'gamma': 0.9059262402406412,
+    'log10_c': -2.7161012775334767,
+    'log10_d': -0.6940582592795068,
+    'log10_iota': None,
+    'log10_k0': -2.5891733342042413,
+    'log10_mu': -5.879193795717028,
+    'log10_tau': 3.4936306228278666,
+    'omega': -0.062496549749596196,
+    'rho': 0.7321865528741327}
+02-03-26 20:21:59 : INFO     : etas.inversion  -     difference to previous: 0.001464892287554892
+02-03-26 20:21:59 : DEBUG    : etas.inversion  -     branching ratio: 0.989056786074545
+02-03-26 20:21:59 : INFO     : etas.inversion  -   iteration 17
+02-03-26 20:21:59 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 20:21:59 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 20:22:11 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 20:22:36 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 20:22:38 : DEBUG    : etas.inversion  -     expectation step took 0:00:38.883325
+02-03-26 20:22:38 : DEBUG    : etas.inversion  -       n_hat: 5693.186096257721
+02-03-26 20:22:38 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 20:22:38 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 20:30:22 : DEBUG    : etas.inversion  -     optimization step took 0:07:43.408936
+02-03-26 20:30:22 : INFO     : etas.inversion  -     new parameters:
+02-03-26 20:30:22 : INFO     : etas.inversion  - {   'a': 1.6401101295599967,
+    'gamma': 0.9054999224616097,
+    'log10_c': -2.716005858434509,
+    'log10_d': -0.6939567415854382,
+    'log10_iota': None,
+    'log10_k0': -2.589080231394517,
+    'log10_mu': -5.879178270742782,
+    'log10_tau': 3.493640188069135,
+    'omega': -0.062490522546718476,
+    'rho': 0.7321634737580736}
+02-03-26 20:30:22 : INFO     : etas.inversion  -     difference to previous: 0.0011265819556362383
+02-03-26 20:30:22 : DEBUG    : etas.inversion  -     branching ratio: 0.9890462929000252
+02-03-26 20:30:22 : INFO     : etas.inversion  -   iteration 18
+02-03-26 20:30:22 : DEBUG    : etas.inversion  -     expectation step
+02-03-26 20:30:22 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 20:30:33 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 20:30:56 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 20:30:59 : DEBUG    : etas.inversion  -     expectation step took 0:00:37.305650
+02-03-26 20:30:59 : DEBUG    : etas.inversion  -       n_hat: 5693.32810025974
+02-03-26 20:30:59 : DEBUG    : etas.inversion  -       i_hat: 0
+02-03-26 20:30:59 : DEBUG    : etas.inversion  -     optimizing parameters
+02-03-26 20:41:01 : DEBUG    : etas.inversion  -     optimization step took 0:10:01.681602
+02-03-26 20:41:01 : INFO     : etas.inversion  -     new parameters:
+02-03-26 20:41:01 : INFO     : etas.inversion  - {   'a': 1.6398512358199917,
+    'gamma': 0.9051879961666596,
+    'log10_c': -2.7160097939425056,
+    'log10_d': -0.6938867105312045,
+    'log10_iota': None,
+    'log10_k0': -2.5890237238752887,
+    'log10_mu': -5.879167438357484,
+    'log10_tau': 3.493648395598661,
+    'omega': -0.062488761833540886,
+    'rho': 0.7321419352807125}
+02-03-26 20:41:01 : INFO     : etas.inversion  -     difference to previous: 0.0007436332217763963
+02-03-26 20:41:01 : DEBUG    : etas.inversion  -     branching ratio: 0.9890455909445534
+02-03-26 20:41:01 : INFO     : etas.inversion  -   stopping here. converged after 19 iterations.
+02-03-26 20:41:01 : INFO     : etas.inversion  -     last expectation step
+02-03-26 20:41:01 : DEBUG    : etas.inversion  -     calculating gij
+02-03-26 20:41:13 : DEBUG    : etas.inversion  -     calculating Pij
+02-03-26 20:41:37 : DEBUG    : etas.inversion  -     calculating n_hat and l_hat
+02-03-26 20:41:40 : DEBUG    : etas.inversion  -     expectation step took 0:00:39.132277
+02-03-26 20:41:40 : INFO     : etas.inversion  -     n_hat: 5693.4190503992095
+02-03-26 20:41:40 : INFO     : etas.inversion  -   Data will be stored in output_data_SCEDC_20/
+02-03-26 20:42:02 : INFO     : etas.inversion  - INITIALIZING...
+02-03-26 20:42:02 : INFO     : etas.inversion  -   model is named NoName ETAS Model, has ID 0
+02-03-26 20:42:02 : INFO     : etas.inversion  -   Time Window: 
+      1981-01-01 00:00:00 (aux start)
+      1985-01-01 00:00:00 (start)
+      2014-01-01 00:00:00 (end).
+02-03-26 20:42:02 : INFO     : etas.inversion  -   free_productivity: False, free_background: False
+02-03-26 20:42:03 : INFO     : etas.inversion  - PREPARING NoName ETAS Model
+02-03-26 20:42:03 : INFO     : etas.inversion  -   filtering catalog...
+02-03-26 20:42:03 : INFO     : etas.inversion  -   130352 out of 130424 events are within time window.
+02-03-26 20:42:03 : INFO     : etas.inversion  -   Coordinates of region: [array([  32., -122.]), array([  32., -114.]), array([  37., -114.]), array([  37., -122.]), array([  32., -122.])]
+02-03-26 20:42:03 : INFO     : etas.inversion  - Region has 406963.70523318584 square km
+02-03-26 20:42:03 : INFO     : etas.inversion  - 130350 events lie within target region.
+02-03-26 20:42:03 : INFO     : etas.inversion  - 130350 events are above completeness.
+Precomputing Intgral
+Done
++----------+---Poisson--+------------+
++---------+----------+----------+
+|     nll |      sll |      tll |
++=========+==========+==========+
+| 12.2734 | -12.9165 | 0.643052 |
++---------+----------+----------+
+/user/work/ss15859/miniforge3/envs/earthquakeNPP/lib/python3.11/site-packages/etas/evaluation.py:388: RuntimeWarning: divide by zero encountered in log
+  self.LL= np.log(self.lambd) - self.int_lambd
+/user/work/ss15859/miniforge3/envs/earthquakeNPP/lib/python3.11/site-packages/etas/evaluation.py:389: RuntimeWarning: divide by zero encountered in log
+  self.TLL = np.log(self.lambd_star) - self.int_lambd
+/user/work/ss15859/miniforge3/envs/earthquakeNPP/lib/python3.11/site-packages/etas/evaluation.py:390: RuntimeWarning: invalid value encountered in subtract
+  self.SLL = self.LL - self.TLL
+02-03-26 21:00:19 : INFO     : etas.inversion  -   Data will be stored in output_data_SCEDC_20/
+area:  406963.70523318584
++----------+----ETAS----+------------+
++---------+----------+---------+
+|     nll |      sll |     tll |
++=========+==========+=========+
+| 4.99324 | -7.53422 | 2.54098 |
++---------+----------+---------+

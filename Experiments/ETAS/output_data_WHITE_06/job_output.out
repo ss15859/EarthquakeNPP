@@ -1,0 +1,51 @@
+cpu-bind=MASK - bp1-compute091, task  0  0 [11660]: mask 0xf00000f0000 set
+27-02-26 13:16:01 : INFO     : etas.inversion  - INITIALIZING...
+27-02-26 13:16:01 : INFO     : etas.inversion  -   model is named NoName ETAS Model, has ID 0
+27-02-26 13:16:01 : INFO     : etas.inversion  -   Time Window: 
+      2008-01-01 00:00:00 (aux start)
+      2009-01-01 00:00:00 (start)
+      2017-01-01 00:00:00 (end).
+27-02-26 13:16:01 : INFO     : etas.inversion  -   free_productivity: False, free_background: False
+27-02-26 13:16:02 : INFO     : etas.inversion  - PREPARING NoName ETAS Model
+27-02-26 13:16:02 : INFO     : etas.inversion  -   filtering catalog...
+27-02-26 13:16:02 : INFO     : etas.inversion  -   58636 out of 58636 events are within time window.
+27-02-26 13:16:02 : INFO     : etas.inversion  -   Coordinates of region: [array([  33.599, -117.133]), array([  33.966, -116.83 ]), array([  33.554, -116.119]), array([  33.182, -116.429])]
+27-02-26 13:16:02 : INFO     : etas.inversion  - Region has 4000.1951077576164 square km
+27-02-26 13:16:02 : INFO     : etas.inversion  - 58634 events lie within target region.
+27-02-26 13:16:02 : INFO     : etas.inversion  - 58634 events are above completeness.
+Precomputing Intgral
+Done
++----------+---Poisson--+------------+
++---------+---------+---------+
+|     nll |     sll |     tll |
++=========+=========+=========+
+| 6.57947 | -8.2941 | 1.71463 |
++---------+---------+---------+
+/user/work/ss15859/miniforge3/envs/earthquakeNPP/lib/python3.11/site-packages/etas/evaluation.py:388: RuntimeWarning: divide by zero encountered in log
+  self.LL= np.log(self.lambd) - self.int_lambd
+/user/work/ss15859/miniforge3/envs/earthquakeNPP/lib/python3.11/site-packages/etas/evaluation.py:389: RuntimeWarning: divide by zero encountered in log
+  self.TLL = np.log(self.lambd_star) - self.int_lambd
+/user/work/ss15859/miniforge3/envs/earthquakeNPP/lib/python3.11/site-packages/etas/evaluation.py:390: RuntimeWarning: invalid value encountered in subtract
+  self.SLL = self.LL - self.TLL
+27-02-26 13:24:24 : INFO     : etas.inversion  -   Data will be stored in output_data_WHITE_06/
+area:  4000.1951077576164
++----------+----ETAS----+------------+
++---------+----------+--------+
+|     nll |      sll |    tll |
++=========+==========+========+
+| 2.23997 | -4.26107 | 2.0211 |
++---------+----------+--------+
+/user/work/ss15859/miniforge3/envs/earthquakeNPP/lib/python3.11/site-packages/etas/evaluation.py:388: RuntimeWarning: divide by zero encountered in log
+  self.LL= np.log(self.lambd) - self.int_lambd
+/user/work/ss15859/miniforge3/envs/earthquakeNPP/lib/python3.11/site-packages/etas/evaluation.py:389: RuntimeWarning: divide by zero encountered in log
+  self.TLL = np.log(self.lambd_star) - self.int_lambd
+/user/work/ss15859/miniforge3/envs/earthquakeNPP/lib/python3.11/site-packages/etas/evaluation.py:390: RuntimeWarning: invalid value encountered in subtract
+  self.SLL = self.LL - self.TLL
+27-02-26 13:31:05 : INFO     : etas.inversion  -   Data will be stored in output_data_WHITE_06/
+area:  4000.1951077576164
++----------+----ETAS----+------------+
++---------+----------+--------+
+|     nll |      sll |    tll |
++=========+==========+========+
+| 2.23997 | -4.26107 | 2.0211 |
++---------+----------+--------+
