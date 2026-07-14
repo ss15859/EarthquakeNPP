@@ -16,9 +16,8 @@ import json
 import logging, sys
 
 from etas import set_up_logger
-sys.path.append('etas/')
-from inversion import ETASParameterCalculation
-from simulation import ETASSimulation
+from etas.inversion import ETASParameterCalculation
+from etas.simulation import ETASSimulation
 from datetime import datetime, timedelta
 
 set_up_logger(level=logging.INFO)
@@ -36,7 +35,7 @@ if __name__ == '__main__':
     days_from_start = int(sys.argv[2])
     
     fn_inversion_output = config['data_path']+'/parameters_0.json'
-    fn_store_simulation = sconfig['data_path']+'/day_'+days_from_start+'.csv'
+    fn_store_simulation = config['data_path']+'/day_'+str(days_from_start)+'.csv'
     forecast_duration = 1
 
     # load output from inversion
